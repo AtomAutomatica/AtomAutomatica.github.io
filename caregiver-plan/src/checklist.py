@@ -30,9 +30,9 @@ AU = [
  ('Sign your legal papers while you are clearly competent.',
   'Durable Power of Attorney, Medical Power of Attorney, HIPAA release, Directive to Physicians, and a <b>Transfer on Death Deed</b> for the house. Free forms at TexasLawHelp.org. Record the deed with the county clerk.'),
  ('At the caseworker visit: answer for the worst days.',
-  'They score you on <b>Form H2060</b>. Say clearly: "My niece is not available to do this for free; she is being hired as the paid attendant." Do not let tasks be marked "C".'),
+  'They score you on <b>Form H2060</b>. Say clearly: "My daughter is not available to do this for free; she is being hired as the paid attendant." Do not let tasks be marked "C".'),
  ('Choose Consumer Directed Services and pick an FMSA.',
-  'Sign <b>Form 1584</b>. You are the employer; the FMSA does payroll. <b>Do not name your niece or her husband as Designated Representative</b> or they can never be paid.'),
+  'Sign <b>Form 1584</b>. You are the employer; the FMSA does payroll. <b>Do not name your daughter or her husband as Designated Representative</b> or they can never be paid.'),
  ('Set the wage as high as the budget allows.',
   'Ask the FMSA for the budget worksheet and set the hourly wage on <b>Form 1730</b> at the ceiling (about $15.05 now, $15.90 on the waiver).'),
  ('If either of you is a veteran, start that claim now.',
@@ -72,7 +72,7 @@ CO = [
 
 HU = [
  ('Get hired as the second attendant.',
-  'Same FMSA packet as your wife (Forms 1724, 1725, 1734, 1728, 1730, 1731, 1732, 1737, I-9, W-4). Nothing bars a niece\'s husband. Add your license and auto insurance if you will drive them.'),
+  'Same FMSA packet as your wife (Forms 1724, 1725, 1734, 1728, 1730, 1731, 1732, 1737, I-9, W-4). Nothing bars a daughter\'s husband. Add your license and auto insurance if you will drive them.'),
  ('Take the other spouse.',
   'Cleanest split: your wife is the main attendant for one, you for the other, and each of you picks up the other\'s remaining hours. This uses every authorized hour and avoids overtime eating the budget.'),
  ('Be the named backup on Form 1740.',
@@ -105,7 +105,7 @@ s += [PageBreak()]
 s += page('Checklist 2: The Uncle', 'Same list, your own case. Two separate applications, two assessments, two sets of paid hours. Do not let anyone merge them.', AU,
     'Your numbers', 'Income limit <b>$2,982/month</b> each. Countable savings <b>$2,000</b> alone or <b>$3,000</b> as a couple. Veteran? Call <b>800-252-8387</b> this week - Aid and Attendance can add up to <b>$2,874/month</b> and Medicaid does not count it as income.')
 s += [PageBreak()]
-s += page('Checklist 3: The Cousin', 'You are the organizer now and the paid attendant later. Two rules decide whether you get paid at all: never be the Designated Representative, and time your job resignation.', CO,
+s += page('Checklist 3: The Daughter', 'You are the organizer now and the paid attendant later. Two rules decide whether you get paid at all: never be the Designated Representative, and time your job resignation.', CO,
     'What you can earn', 'CDS wage ceiling about <b>$15.05/hour</b> under CAS, <b>$15.90</b> under STAR+PLUS HCBS. Working both employers, that is roughly <b>$4,500 to $9,600 a month</b> for you and your husband together, and it is federal-income-tax-free if you live in the home.')
 s += [PageBreak()]
 s += page('Checklist 4: The Husband', 'You are the second paid attendant, the required backup, the VA claim, and the record keeper. The paperwork you keep is what protects everyone\'s hours.', HU,

@@ -11,7 +11,7 @@ def cover():
         P('How your cousin and her husband get paid by Texas Medicaid to care for your aunt and uncle at home, '
           'at the highest legitimate pay, with the highest level of care', 'subtitle'),
         Spacer(1, 0.3 * inch),
-        P('<b>Who this is for:</b> an elderly married couple (aunt and uncle) who own their home in Texas, and their niece '
+        P('<b>Who this is for:</b> an elderly married couple (aunt and uncle) who own their home in Texas, and their daughter '
           '(the cousin) and her husband, who will move in, give up outside work, live in the home, and become the paid attendants.', 'body'),
         P('<b>What is inside:</b> the exact Texas programs that pay relatives, 2026 dollar limits and hourly rates, '
           'an itemized step list for each of the four people, phone numbers and form numbers verified against HHSC and federal '
@@ -21,10 +21,15 @@ def cover():
         callout('<b>The three-sentence version.</b> Put both names on the STAR+PLUS HCBS interest list today and apply for '
                 'Community Attendant Services (CAS) the same day, because CAS has no waitlist and pays for up to 50 hours a week '
                 'per person. Choose the Consumer Directed Services (CDS) option so the aunt and uncle are the employers and can '
-                'legally hire the niece and her husband; never make the niece the Designated Representative. When STAR+PLUS HCBS '
+                'legally hire their daughter and her husband; never make their daughter the Designated Representative. When STAR+PLUS HCBS '
                 'opens (typically inside a year), move to it: no 50-hour cap, 30 days of respite per person per year, '
                 'home modifications, adaptive aids, and dental, all on top of attendant hours.', 'money', 'Read this first'),
-        Spacer(1, 0.25 * inch),
+        Spacer(1, 0.15 * inch),
+        callout('This plan assumes a couple of <b>modest means</b> and that the caregiver is a niece. If the couple has substantial property or retirement savings, and the caregiver is their <b>daughter</b>, '
+                'two things here are wrong for them: the advice to apply for both spouses at once (it forfeits the community spouse protections, worth up to $162,660), and the omission of the '
+                'caregiver child exception (MEPD I-3100), which can transfer the home to a daughter with no penalty after two years of live-in care. '
+                'See the companion document <b>"Keeping the Estate and Getting the Care"</b> for that situation. The VA sections apply only if a spouse is a veteran.', 'warn', 'SUPERSEDED IN PART - read this before using this plan'),
+        Spacer(1, 0.2 * inch),
         P('Prepared September 3, 2026 from Texas HHSC handbooks, the Texas Administrative Code, HHSC rate schedules, IRS, VA and '
           'SSA sources. Rules change every September 1 and every January 1; confirm any figure before you rely on it. '
           'This is a planning guide, not legal, tax or medical advice.', 'small'),
@@ -61,7 +66,7 @@ def one_page():
         P('Texas pays family caregivers through the <b>Consumer Directed Services (CDS)</b> option of its Medicaid attendant programs. The person receiving care '
           '(or their representative) becomes the legal employer, a state-contracted <b>Financial Management Services Agency (FMSA)</b> runs payroll, and the employer '
           'hires whoever they choose, including relatives, as long as the hire is not the care recipient\'s spouse, the employer, the Designated Representative, or '
-          'those people\'s spouses (HHSC Form 1726, April 2026; 26 TAC Chapter 264). A niece and her husband who live in the home are eligible hires.'),
+          'those people\'s spouses (HHSC Form 1726, April 2026; 26 TAC Chapter 264). A daughter and her husband who live in the home are eligible hires.'),
         P('There are two doors into paid hours for a couple over 65 who are not yet on Medicaid. You go through both at once:'),
         table(['', 'Door 1: Community Attendant Services (CAS)', 'Door 2: STAR+PLUS HCBS program'], [
             ['What it is', 'State-plan attendant program run by an HHSC caseworker. Not full Medicaid (no Medicaid card), just attendant hours.',
@@ -80,7 +85,7 @@ def one_page():
             '<b>Today:</b> add BOTH names to the STAR+PLUS HCBS interest list (YourTexasBenefits.com "Find Support Services", or call 844-438-5658). The request date is your place in line.',
             '<b>Today:</b> call 2-1-1 (option 2) or 877-541-7905 and open a Community Care intake for BOTH spouses, asking for Community Attendant Services with the CDS option. File Form H1200 online for each spouse. If the cousin is quitting a job to do this, the resignation must fall within 30 days before or after this application date (CCSE 2433.2), or HHSC can treat her as an available unpaid caregiver.',
             '<b>This week:</b> doctor visit for each spouse; ask the practitioner to complete <b>Form 3052</b> (Practitioner\'s Statement of Medical Need) and to chart every ADL limitation. Get finances under the 2026 limits. Sign powers of attorney and a HIPAA release.',
-            '<b>Within 14 days:</b> caseworker home visit. Each spouse is scored on Form H2060. Describe the worst days, task by task. Say the niece will NOT keep doing tasks for free, so tasks are coded "purchased," not "caregiver."',
+            '<b>Within 14 days:</b> caseworker home visit. Each spouse is scored on Form H2060. Describe the worst days, task by task. Say their daughter will NOT keep doing tasks for free, so tasks are coded "purchased," not "caregiver."',
             '<b>Within 30 days:</b> eligibility notice (Form 2065-A) with weekly hours. Elect CDS on Form 1584, pick an FMSA, and have the aunt and uncle each be their own employer. Cousin and husband complete the FMSA hiring packet.',
             '<b>Weeks 6 to 10:</b> first paychecks. Set the wage on Form 1730 as high as the budget allows. Clock every visit in EVV.',
             '<b>In parallel:</b> if either spouse served in wartime, file for VA Pension with Aid and Attendance; if the veteran has a 70%+ service-connected rating, file for the VA caregiver stipend, which is paid on top of Medicaid.',
