@@ -35,6 +35,8 @@ S['h3'] = ParagraphStyle('h3', fontName='DVB', fontSize=11, leading=14, textColo
 S['body'] = ParagraphStyle('body', fontName='DV', fontSize=9.6, leading=13.2, spaceAfter=5)
 S['small'] = ParagraphStyle('small', fontName='DV', fontSize=8.2, leading=10.8, spaceAfter=3, textColor=colors.HexColor('#333333'))
 S['tiny'] = ParagraphStyle('tiny', fontName='DV', fontSize=7.4, leading=9.4, textColor=colors.HexColor('#444444'))
+S['tight'] = ParagraphStyle('tight', fontName='DV', fontSize=7.5, leading=9.3)
+S['tighth'] = ParagraphStyle('tighth', fontName='DVB', fontSize=7.7, leading=9.5, textColor=colors.white)
 S['cell'] = ParagraphStyle('cell', fontName='DV', fontSize=8.4, leading=10.8)
 S['cellb'] = ParagraphStyle('cellb', fontName='DVB', fontSize=8.4, leading=10.8)
 S['cellh'] = ParagraphStyle('cellh', fontName='DVB', fontSize=8.6, leading=11, textColor=colors.white)
@@ -76,13 +78,14 @@ def callout(text, kind='info', title=None):
     return KeepTogether([Spacer(1, 3), t, Spacer(1, 6)])
 
 def table(header, rows, widths, zebra=True, header_bg=NAVY, font='cell'):
-    data = [[Paragraph(h, S['cellh']) for h in header]]
+    hs = S['tighth'] if font == 'tight' else S['cellh']
+    data = [[Paragraph(h, hs) for h in header]]
     for r in rows:
         data.append([Paragraph(str(c), S[font]) if not hasattr(c, 'wrap') else c for c in r])
     t = Table(data, colWidths=widths, repeatRows=1)
     style = [('BACKGROUND', (0, 0), (-1, 0), header_bg), ('GRID', (0, 0), (-1, -1), 0.4, GRID),
              ('VALIGN', (0, 0), (-1, -1), 'TOP'), ('LEFTPADDING', (0, 0), (-1, -1), 4), ('RIGHTPADDING', (0, 0), (-1, -1), 4),
-             ('TOPPADDING', (0, 0), (-1, -1), 3), ('BOTTOMPADDING', (0, 0), (-1, -1), 3)]
+             ('TOPPADDING', (0, 0), (-1, -1), 2 if font == 'tight' else 3), ('BOTTOMPADDING', (0, 0), (-1, -1), 2 if font == 'tight' else 3)]
     if zebra:
         for i in range(1, len(data)):
             if i % 2 == 0:
