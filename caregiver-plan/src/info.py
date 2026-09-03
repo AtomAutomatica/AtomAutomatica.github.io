@@ -25,7 +25,9 @@ def tint(c, a):
 def page_bg(c):
     c.setFillColor(SURF); c.rect(0, 0, W, H, fill=1, stroke=0)
 
-def header(c, kicker, title, n):
+PAGE=[0]
+def header(c, kicker, title, n=None):
+    PAGE[0]+=1; n=PAGE[0]
     c.setFillColor(NAVY); c.rect(0, H-92, W, 92, fill=1, stroke=0)
     c.setFillColor(colors.HexColor('#8fb3d9')); c.setFont('DVB', 8.5)
     c.drawString(M, H-38, kicker.upper())
@@ -63,6 +65,34 @@ def arrow_down(c, x, y0, y1, col=GREY):
     c.setFillColor(col)
     p = c.beginPath(); p.moveTo(x-5, y1+8); p.lineTo(x+5, y1+8); p.lineTo(x, y1); p.close()
     c.drawPath(p, fill=1, stroke=0)
+
+
+# ---------------------------------------------------------------- page 0: estate recovery
+def p0(c):
+    page_bg(c); header(c, 'Read this before anything else', 'Medicaid long-term care is a loan')
+    y = H-118
+    y = para(c, 'Every dollar Texas Medicaid pays for long-term care after age 55 goes on a tab - including the wages it pays their daughter. The state collects the tab from the estate after the second death. Understanding this one fact is what makes the rest of the plan make sense.',
+             M, y, W-2*M, 9.6, 13)
+    y -= 12
+    steps = [
+        (S1, 1, 'Medicaid pays for care, and keeps a running total', 'Nursing facility care, the STAR+PLUS HCBS waiver, Community Attendant Services, and related hospital and drug costs, from age 55 on (1 TAC Chapter 373). Attendant hours, respite, nursing, home modifications - all of it. Not counted: ordinary medical Medicaid before 55, and Medicare premium help.'),
+        (S1, 2, 'Nothing is collected while either spouse is alive', 'The tab simply grows. No lien on the house, no bill in the mail.'),
+        (S3, 3, 'After the second death, the state sends Form 8001', 'A Notice of Intent to File a Claim goes to whoever handles the estate. The family then has 60 days to claim deductions or ask for a hardship waiver.'),
+        (S3, 4, 'The claim is paid ONLY from the probate estate', 'Texas chose the narrow definition (1 TAC 373.105). It is a Class 7 claim - behind funeral costs, administration, secured debts and taxes.'),
+        (S2, 5, 'Whatever is outside probate is outside the claim', 'A home passed by Lady Bird or Transfer on Death deed. Accounts with named or payable-on-death beneficiaries. Survivorship accounts. Life insurance. Retirement accounts with beneficiaries. None of it is reachable.'),
+        (S2, 6, 'What shrinks the claim', 'No claim at all if the estate is $10,000 or less, or Medicaid paid $3,000 or less. Hardship waiver (Form 5006) for a family farm or ranch business, a homestead under $100,000 passing to a child with income under 300% of poverty, or recovery that would push heirs onto public assistance. Uncapped deductions for documented care that kept them out of a facility and for taxes, insurance, utilities and repairs the heirs paid (373.213).'),
+    ]
+    for col, n, t, b in steps:
+        h = {1:70, 5:60, 6:84}.get(n, 50)
+        card(c, M, y-h, W-2*M, h, col, n, t, b, 10.5, 8.6); y -= h + 7
+    y -= 4
+    c.setFillColor(NAVY); c.setStrokeColor(NAVY); c.roundRect(M, y-104, W-2*M, 104, 7, fill=1, stroke=1)
+    c.setFillColor(colors.white); c.setFont('DVB', 11); c.drawString(M+16, y-20, 'What this means for this family')
+    para(c, 'If Medicaid pays their daughter $6,000 a month for three years, that is roughly $216,000 the state will come for after the second death - out of whatever is sitting in probate. If the house has passed by deed and the accounts have beneficiaries, probate may be nearly empty and the state recovers little. If nothing was structured, Medicaid simply took the estate later instead of the family spending it now.',
+         M+16, y-36, W-2*M-32, 8.9, 11.4, 'DV', colors.HexColor('#dbe6f2'))
+    para(c, 'That is why "private pay now" and "Medicaid" are closer in true cost than they look - and why the deed matters more than the trust.',
+         M+16, y-88, W-2*M-32, 9, 11.4, 'DVB', colors.white)
+    footer(c, '1 TAC 373.105, 373.209, 373.213; HHSC Guide to MERP; Forms 8001, 5006. Managed care: ask MERP whether monthly plan payments are claimed.')
 
 # ---------------------------------------------------------------- page 1
 def p1(c):
@@ -382,7 +412,7 @@ def p6(c):
 def build(out):
     c = cv.Canvas(out, pagesize=letter)
     c.setTitle('How This Works')
-    for fn in (p1, p2, p3, p_need, p4, p5, p6):
+    for fn in (p0, p1, p2, p3, p_need, p4, p5, p6):
         fn(c); c.showPage()
     c.save(); print('ok')
 
