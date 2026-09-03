@@ -100,8 +100,9 @@ def p1(c):
     y = H-110
     c.setFillColor(NAVY); c.setFont('DVB', 8.8); c.drawString(M, y, 'WHO IS WHO ON EVERY PAGE')
     c.setFillColor(INK2); c.setFont('DV', 8.8)
-    c.drawString(M, y-12, 'THE PARENTS = Mom and Dad, the elderly couple who own everything.  THE CAREGIVERS = their daughter and her husband, who move in.')
-    y -= 24
+    c.drawString(M, y-12, 'THE PARENTS = Mom and Dad, the elderly couple who own everything.')
+    c.drawString(M, y-23, 'THE CAREGIVERS = their daughter and her husband, who move in to care for them.')
+    y -= 34
     c.setFillColor(NAVY); c.setStrokeColor(NAVY); c.setLineWidth(1.2)
     c.roundRect(M, y-34, W-2*M, 34, 6, fill=1, stroke=1)
     c.setFillColor(colors.white); c.setFont('DVB', 12.5)
@@ -115,9 +116,9 @@ def p1(c):
         (S2, 2, 'It is protected for the parent who stays home', 'Only ONE parent applies for Medicaid. The other parent becomes the "community spouse" and keeps HALF of the couple\'s countable savings (at least $32,532, at most $162,660) plus up to $4,066.50 a month of income. That protection exists only while there is a spouse at home - which is why they never both apply at once.'),
         (S3, 3, 'It gets turned into care', 'Money spent making the house work for them - ramps, a roll-in shower, wider doors, a ground-floor suite, lifts - is unlimited, has no waiting period, and Texas blesses it by name. Cash becomes care AND stays in an asset that is exempt for life.'),
         (S4, 4, 'It gets turned into income', 'Retirement savings above the protected amount can be converted into a properly structured annuity paying the parent at home a monthly income for life. Done right there is no penalty. Done wrong the whole purchase is penalized - attorney work.'),
-        (S4, 5, 'It moves early, and legally', 'Assets placed in an irrevocable trust are outside the test once five years have passed - so the clock is worth starting now. And because the caregiver is their DAUGHTER, the house itself can pass to her penalty-free after two years of live-in care. See page 3.'),
+        (S4, 5, 'It moves early, and legally', 'Assets placed in an irrevocable trust are outside the test once five years have passed - so the clock is worth starting now. And because the caregiver is their DAUGHTER, the house itself can pass to her penalty-free after two years of live-in care. See page 4.'),
     ]
-    ch = 78
+    ch = 76
     for col, n, t, b in items:
         card(c, M, y-ch, W-2*M, ch, col, n, t, b)
         y -= ch + 9
