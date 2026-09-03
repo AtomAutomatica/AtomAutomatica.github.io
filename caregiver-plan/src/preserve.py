@@ -12,7 +12,7 @@ def build(out):
       P('A Texas plan for an elderly couple with substantial assets, and for their daughter and her husband who will move in and be paid to care for them', 'subtitle'),
       Spacer(1, 0.3*inch),
       callout('<b>The headline: they do not spend down to $3,000.</b> That figure applies only to the spouse who applies, and only after the other spouse\'s protections are carved out. '
-        'A married Texas couple keeps the homestead at <b>any value</b>, one car at <b>any value</b>, household goods, prepaid funerals, up to <b>$162,660</b> in other resources, and up to <b>$4,066.50</b> a month in income. '
+        'A married Texas couple keeps the homestead at <b>any value</b>, one car at <b>any value</b>, household goods, prepaid funerals, <b>half</b> of the couple\'s other countable resources (at least <b>$32,532</b>, at most <b>$162,660</b>), and up to <b>$4,066.50</b> a month in income. '
         'Most of an ordinary estate survives without a trust. What needs planning is the part above that line: non-homestead land and retirement savings.', 'money', 'Read this first'),
       Spacer(1, 0.15*inch),
       callout('This edition assumes: both spouses living at home, community property owned equally, <b>no veteran status</b>, and a firm goal of preserving the estate rather than spending it down. '
@@ -33,7 +33,7 @@ def build(out):
         ['One automobile', '<b>Any value</b>', 'MEPD F-4221'],
         ['Household goods and personal effects', 'All', 'MEPD F-4222'],
         ['Irrevocable prepaid funeral contracts', 'Both spouses', 'MEPD F-4200'],
-        ['Other countable resources (the SPRA)', '<b>$32,532 minimum to $162,660 maximum</b>', 'MEPD Appendix XXXI (rev. June 1, 2026)'],
+        ['Other countable resources (the SPRA)', '<b>One-half of the couple\'s combined countable resources</b>, floor $32,532, cap $162,660. The applicant\'s half must be spent or converted.', 'MEPD J-4400; Appendix XXXI (rev. June 1, 2026)'],
         ['Community spouse monthly income', 'Up to <b>$4,066.50</b>', 'MMMNA, Appendix XXXI'],
         ['The applying spouse keeps', '$2,000', 'MEPD Appendix XXXI'],
       ], [1.9*inch, 3.3*inch, 1.7*inch]),

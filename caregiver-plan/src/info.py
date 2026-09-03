@@ -78,7 +78,7 @@ def p1(c):
 
     items = [
         (S1, 1, 'It is already exempt', 'The homestead counts for nothing - at ANY value - as long as a spouse lives there. So does one car, at any value, plus household goods. For most families this is the largest piece of the estate, and it never had to be protected. It already is.'),
-        (S2, 2, 'It is protected for the spouse who stays home', 'Only ONE spouse applies. The other becomes the "community spouse" and keeps up to $162,660 in savings plus up to $4,066.50 a month of income. That protection exists only while there is a spouse at home - which is why they never both apply at once.'),
+        (S2, 2, 'It is protected for the spouse who stays home', 'Only ONE spouse applies. The other becomes the "community spouse" and keeps HALF of the couple\'s countable savings (at least $32,532, at most $162,660) plus up to $4,066.50 a month of income. That protection exists only while there is a spouse at home - which is why they never both apply at once.'),
         (S3, 3, 'It gets turned into care', 'Money spent making the house work for them - ramps, a roll-in shower, wider doors, a ground-floor suite, lifts - is unlimited, has no waiting period, and Texas blesses it by name. Cash becomes care AND stays in an asset that is exempt for life.'),
         (S4, 4, 'It gets turned into income', 'Retirement savings above the protected amount can be converted into a properly structured annuity paying the spouse at home a monthly income for life. Done right there is no penalty. Done wrong the whole purchase is penalized - attorney work.'),
         (S4, 5, 'It moves early, and legally', 'Assets placed in an irrevocable trust are outside the test once five years have passed - so the clock is worth starting now. And because the caregiver is their DAUGHTER, the house itself can pass to her penalty-free after two years of live-in care. See page 3.'),
@@ -144,7 +144,7 @@ def p2(c):
 
     by = base + 8
     blocks = [
-        (S2, 30, 'Savings kept', 'up to $162,660'),
+        (S2, 30, 'Savings kept', 'half: $32,532 to $162,660'),
         (S2, 26, 'Income kept', 'up to $4,066.50/mo'),
         (S1, 26, 'One car', 'any value'),
         (S1, 74, 'The homestead', 'ANY value'),
@@ -207,9 +207,49 @@ def p3(c):
          M+16, y-78, W-2*M-32, 9.1, 12, 'DVB', INK)
     footer(c, 'MEPD I-3100 (caregiver child exception); I-5100 (penalty divisor $262.37/day); Money Follows the Person, HHSC.')
 
-# ---------------------------------------------------------------- page 4
+
+# ---------------------------------------------------------------- page 4 (new)
+def p_need(c):
+    page_bg(c); header(c, 'The honest answer', 'Is a trust or annuity even needed?', 4)
+    y = H-118
+    y = para(c, 'No. They are two of five ways to handle one specific slice of money - and there is a sixth choice, which is not to use Medicaid at all. Start by adding up the countable assets: everything EXCEPT the homestead, one car, household goods and prepaid funerals.', M, y, W-2*M, 9.6, 13)
+    y -= 12
+    bands = [
+        (S2, 'Under about $34,500', 'One spouse qualifies as things stand today. The spouse at home keeps the $32,532 floor, the applicant keeps $2,000. No trust. No annuity. Nothing to restructure.'),
+        (S3, '$34,500 to about $325,000', 'The spouse at home keeps HALF. The other half has to be spent or converted before the applying spouse is under $2,000. That half is the only money the tools below exist for.'),
+        (S4, 'Over about $325,000', 'The spouse at home keeps the $162,660 cap. Everything above it must be spent or converted - or the family decides Medicaid is not worth chasing (see below).'),
+    ]
+    for col, t, b in bands:
+        card(c, M, y-56, W-2*M, 56, col, None, t, b, 11, 8.8); y -= 63
+    y -= 12
+    c.setFillColor(NAVY); c.setFont('DVB', 11.5); c.drawString(M, y, 'Five ways to handle the applicant\'s half - trust and annuity are only two of them'); y -= 8
+    ways = [
+        ('1', 'Spend it on exempt things', 'Remodel the homestead for accessibility, prepay both funerals, pay off the mortgage, replace the car. No penalty, no waiting, and the value stays in the family.'),
+        ('2', 'List the land for sale', 'Real property genuinely on the market is exempt until it sells. No time limit.'),
+        ('3', 'Pay their daughter - carefully', 'A written agreement for hands-on personal care and her documented lost wages. Texas gives no credit for cooking, cleaning or driving.'),
+        ('4', 'Annuity', 'Turns cash into monthly income for the spouse at home. Works immediately. Attorney only - a flawed one penalizes the whole purchase.'),
+        ('5', 'Irrevocable trust', 'Removes assets from the test - but only five years after funding. The slowest tool, so the earliest one to start.'),
+    ]
+    rh = 40
+    for n, t, b in ways:
+        y -= rh
+        c.setFillColor(NAVY); c.circle(M+11, y+22, 9, fill=1, stroke=0)
+        c.setFillColor(colors.white); c.setFont('DVB', 9.5); c.drawCentredString(M+11, y+18.8, n)
+        c.setFillColor(NAVY); c.setFont('DVB', 9.6); c.drawString(M+28, y+26, t)
+        para(c, b, M+28, y+14, W-2*M-40, 8.4, 10.6, 'DV', INK2)
+    y -= 14
+    c.setFillColor(tint(S1, 0.10)); c.setStrokeColor(tint(S1, 0.5)); c.setLineWidth(1)
+    c.roundRect(M, y-118, W-2*M, 118, 7, fill=1, stroke=1)
+    c.setFillColor(S1); c.setFont('DVB', 11); c.drawString(M+16, y-20, 'OR SKIP MEDICAID - what they get today, with no asset test at all')
+    para(c, 'Medicare home health (nursing, therapy, an aide while skilled care is active) at $0. The Area Agency on Aging caregiver program for their daughter: training, counseling, respite vouchers. Home-delivered meals. The over-65 property tax exemptions, ceiling and deferral. A federal medical-expense deduction for caregiver wages paid under a doctor\'s plan of care. And the deed plus the caregiver child exception still protect the house whatever they decide.',
+         M+16, y-36, W-2*M-32, 8.9, 11.4, 'DV', INK)
+    para(c, 'One thing to weigh: for a large estate, Medicaid is mostly a loan. Texas recovers what it paid from the probate estate after the second death. A family that can afford to pay their daughter directly may simply be better off doing so.',
+         M+16, y-94, W-2*M-32, 8.9, 11.4, 'DVB', INK)
+    footer(c, 'MEPD J-4400 (SPRA = one-half of combined countable resources, min $32,532, max $162,660); F-3130; F-7230; F-6500; I-4140; 1 TAC 373.')
+
+# ---------------------------------------------------------------- page 5
 def p4(c):
-    page_bg(c); header(c, 'What happens when', 'The clocks that are already running', 4)
+    page_bg(c); header(c, 'What happens when', 'The clocks that are already running', 5)
     y = H-118
     y = para(c, 'Two of these tools only work if time has already passed. That makes this month, not next year, the moment that matters.', M, y, W-2*M, 9.6, 13)
     y -= 14
@@ -246,7 +286,7 @@ def p4(c):
 
 # ---------------------------------------------------------------- page 5
 def p5(c):
-    page_bg(c); header(c, 'What their daughter earns', 'Paid now, and paid tax-free later', 5)
+    page_bg(c); header(c, 'What their daughter earns', 'Paid now, and paid tax-free later', 6)
     y = H-118
     y = para(c, 'There are two phases, and the money is real in both. What changes between them is who pays and how it is taxed.',
              M, y, W-2*M, 9.6, 13)
@@ -310,7 +350,7 @@ def p5(c):
 
 # ---------------------------------------------------------------- page 6
 def p6(c):
-    page_bg(c); header(c, 'Where to start', 'The next 30 days', 6)
+    page_bg(c); header(c, 'Where to start', 'The next 30 days', 7)
     y = H-118
     y = para(c, 'In order. The first one unlocks the rest - and nothing should be sold, moved, gifted or signed before it.', M, y, W-2*M, 9.6, 13)
     y -= 14
@@ -342,7 +382,7 @@ def p6(c):
 def build(out):
     c = cv.Canvas(out, pagesize=letter)
     c.setTitle('How This Works')
-    for fn in (p1, p2, p3, p4, p5, p6):
+    for fn in (p1, p2, p3, p_need, p4, p5, p6):
         fn(c); c.showPage()
     c.save(); print('ok')
 
