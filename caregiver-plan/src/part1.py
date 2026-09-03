@@ -68,7 +68,7 @@ def one_page():
              'The full home-and-community waiver, run by a managed-care plan (MCO). Attendant hours plus respite, nursing, home mods, adaptive aids, meals, dental, emergency response.'],
             ['Waitlist', '<b>None.</b> Decision within 30 days of a signed application.', '<b>Interest list.</b> As of July 31, 2026, 13,519 names, 99.9% on it under one year; HHSC released 20,595 names since Sept. 1, 2025.'],
             ['Hours', 'Up to <b>50 hours/week per person</b> (42 if "priority"). Needs a score of 24+ on Form H2060 and 6+ hours/week of need.',
-             '<b>No weekly cap and no minimum score.</b> Hours come straight from the Form H2060 task-and-minute math, limited only by a yearly cost ceiling of 202% of nursing-home cost.'],
+             '<b>Not subject to the 50-hour CAS cap, and no minimum score.</b> Hours come from the Form H2060-A task-and-minute math, bounded by a yearly cost ceiling of 202% of nursing-home cost; expect the MCO to want documentation above 50 hours.'],
             ['2026 money limits', 'Income $2,982/mo per person ($5,964 couple); resources $2,000 / $3,000; home exempt to $752,000 equity.', 'Same limits. Income over the cap is fixed with a Qualified Income Trust.'],
             ['CDS (hire family)?', 'Yes', 'Yes, for attendant hours, in-home respite, nursing and therapies'],
             ['Rate paid into the CDS budget (from Sept. 1, 2025)', '$16.33/hour (agency option $17.13)', '$17.24/hour for attendant time (CDS); respite $16.56/hour'],
@@ -78,7 +78,7 @@ def one_page():
         H2('The order of operations'),
         numbered([
             '<b>Today:</b> add BOTH names to the STAR+PLUS HCBS interest list (YourTexasBenefits.com "Find Support Services", or call 844-438-5658). The request date is your place in line.',
-            '<b>Today:</b> call 2-1-1 (option 2) or 877-541-7905 and open a Community Care intake for BOTH spouses, asking for Community Attendant Services with the CDS option. File Form H1200 online for each spouse.',
+            '<b>Today:</b> call 2-1-1 (option 2) or 877-541-7905 and open a Community Care intake for BOTH spouses, asking for Community Attendant Services with the CDS option. File Form H1200 online for each spouse. If the cousin is quitting a job to do this, the resignation must fall within 30 days before or after this application date (CCSE 2433.2), or HHSC can treat her as an available unpaid caregiver.',
             '<b>This week:</b> doctor visit for each spouse; ask the practitioner to complete <b>Form 3052</b> (Practitioner\'s Statement of Medical Need) and to chart every ADL limitation. Get finances under the 2026 limits. Sign powers of attorney and a HIPAA release.',
             '<b>Within 14 days:</b> caseworker home visit. Each spouse is scored on Form H2060. Describe the worst days, task by task. Say the niece will NOT keep doing tasks for free, so tasks are coded "purchased," not "caregiver."',
             '<b>Within 30 days:</b> eligibility notice (Form 2065-A) with weekly hours. Elect CDS on Form 1584, pick an FMSA, and have the aunt and uncle each be their own employer. Cousin and husband complete the FMSA hiring packet.',

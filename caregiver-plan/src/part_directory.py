@@ -109,7 +109,7 @@ def directory():
             ['IRS Notice 2014-7; IRC 131; 26 USC 3121(b)(3); Feigh v. Commissioner, 152 T.C. No. 15', 'Difficulty-of-care exclusion; FICA family exemptions; EITC election'],
             ['29 CFR 552.102; 29 CFR 785.22', 'Live-in domestic worker overtime exemption; sleep time'],
             ['38 CFR 3.274-3.278; 38 CFR 71.15-71.40; 38 U.S.C. 1720G', 'VA pension net worth, transfers, medical expenses; PCAFC'],
-            ['Handbooks: MEPD (A-4100, B-6400, E-3000, E-4300, E-7100, F-3600, F-4200, G-4100, G-6200, I-3100, I-4100, I-5100, J-1300, O-1000, Q-2500, App. XXXI, XXXVI); CCSE (2300, 2400, 2531, 2900, 3200, 4400, 4600, 6300); STAR+PLUS (1100, 3200, 3400, 6100-6600, 7300, 8200); PSU (1200, 3311, 4200, 7200); EVV (7000, 9000, 17000)', 'All at fhb.hhs.texas.gov/handbooks'],
+            ['Handbooks: MEPD (A-4100, B-6400, E-3000, E-4300, E-7100, F-3600, F-4200, G-4100, G-6200, I-3100, I-4140, I-5100, J-1300, O-1000, Q-2500, App. XXXI, XXXVI); CCSE (2300, 2400, 2531, 2900, 3200, 4400, 4600, 6300); STAR+PLUS (1100, 3200, 3400, 6100-6600, 7300, 8200); PSU (1200, 3311, 4200, 7200); EVV (7000, 9000, 17000)', 'All at fhb.hhs.texas.gov/handbooks'],
         ], [3.2 * inch, 3.7 * inch]),
         H2('10.6 Search terms that reliably find the official page'),
         bullets([
@@ -119,7 +119,7 @@ def directory():
             '"Consumer Directed Services" "How CDS Works" hhs.texas.gov; "CDS FAQ" hhs.texas.gov pdf; "Form 1726 relationship definitions CDS"; "26 TAC 264.205 designated representative"; "Form 1730 wage and benefits plan"; "PHC CDS budget workbook"',
             '"FMSA agencies" resources.hhs.texas.gov/fmsa; "CDS support advisors" resources.hhs.texas.gov',
             '"9-1-2025 PHC rates" pfd.hhs.texas.gov; "9-1-2025 STAR+PLUS rates" pfd.hhs.texas.gov; "Rider 23 attendant wage $13.00 Information Letter 2025-11"',
-            '"MEPD Handbook Appendix XXXI budget reference chart"; "MEPD Appendix XXXVI qualified income trust"; "MEPD I-5100 transfer of assets divisor"; "MEPD I-4100 compensation"; "MEPD J-1300 spousal definitions"',
+            '"MEPD Handbook Appendix XXXI budget reference chart"; "MEPD Appendix XXXVI qualified income trust"; "MEPD I-5100 transfer of assets divisor"; "MEPD I-4140 compensation"; "MEPD J-1300 spousal definitions"',
             '"Your Guide to the Medicaid Estate Recovery Program" hhs.texas.gov; "1 TAC 373.213"; "Transfer on Death Deed kit" texaslawhelp.org',
             '"STAR+PLUS Handbook 7300 respite"; "STAR+PLUS Handbook 6400 adaptive aids"; "STAR+PLUS Handbook 6600 minor home modifications"; "STAR+PLUS Handbook 8200 consumer directed services"',
             '"EVV policy handbook 9000 visit maintenance 95 days"; "HHAeXchange Texas CDS employer"',
