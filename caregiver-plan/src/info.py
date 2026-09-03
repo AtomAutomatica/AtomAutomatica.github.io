@@ -96,8 +96,12 @@ def p0(c):
 
 # ---------------------------------------------------------------- page 1
 def p1(c):
-    page_bg(c); header(c, 'The whole plan in one picture', 'Nothing has to be given away', 1)
-    y = H-118
+    page_bg(c); header(c, 'The whole plan in one picture', 'Nothing has to be given away')
+    y = H-110
+    c.setFillColor(NAVY); c.setFont('DVB', 8.8); c.drawString(M, y, 'WHO IS WHO ON EVERY PAGE')
+    c.setFillColor(INK2); c.setFont('DV', 8.8)
+    c.drawString(M, y-12, 'THE PARENTS = Mom and Dad, the elderly couple who own everything.  THE CAREGIVERS = their daughter and her husband, who move in.')
+    y -= 24
     c.setFillColor(NAVY); c.setStrokeColor(NAVY); c.setLineWidth(1.2)
     c.roundRect(M, y-34, W-2*M, 34, 6, fill=1, stroke=1)
     c.setFillColor(colors.white); c.setFont('DVB', 12.5)
