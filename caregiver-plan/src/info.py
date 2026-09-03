@@ -179,7 +179,7 @@ def p2(c):
 
     by = base + 8
     blocks = [
-        (S2, 30, 'Savings kept', 'half: $32,532 to $162,660'),
+        (S2, 40, 'Savings kept', 'HALF|$32,532 to $162,660'),
         (S2, 26, 'Income kept', 'up to $4,066.50/mo'),
         (S1, 26, 'One car', 'any value'),
         (S1, 74, 'The homestead', 'ANY value'),
@@ -190,7 +190,11 @@ def p2(c):
         c.setFillColor(NAVY); c.setFont('DVB', 9)
         c.drawString(rx+30, by+bh2-15, lab)
         c.setFillColor(INK); c.setFont('DVB', 10.5)
-        c.drawRightString(rx+colw-30, by+bh2-15, val)
+        if '|' in val:
+            a, b = val.split('|'); c.drawRightString(rx+colw-30, by+bh2-15, a)
+            c.setFont('DVB', 9); c.drawRightString(rx+colw-30, by+bh2-29, b)
+        else:
+            c.drawRightString(rx+colw-30, by+bh2-15, val)
         by += bh2 + 6
     c.setDash(3, 3); c.setStrokeColor(S1); c.setLineWidth(1.2)
     c.line(rx+22, by+2, rx+colw-22, by+2); c.setDash()
@@ -198,7 +202,7 @@ def p2(c):
     c.drawCentredString(rx+colw/2, by+8, 'no ceiling on the home')
 
     c.setFillColor(NAVY); c.setFont('DVB', 10)
-    c.drawCentredString(W/2, base-46, 'Same couple. Same assets. The only difference is how many applications get filed.')
+    c.drawCentredString(W/2, base-46, 'Same parents. Same assets. The only difference is how many applications get filed.')
     c.setFillColor(INK2); c.setFont('DV', 8.8)
     c.drawCentredString(W/2, base-62, 'The needier parent applies. The other may apply years later, or never at all.')
     footer(c, 'MEPD Appendix XXXI (rev. June 1, 2026); F-3600; J-2200; J-4400. The $752,000 home equity cap does not apply while a spouse lives there.')
