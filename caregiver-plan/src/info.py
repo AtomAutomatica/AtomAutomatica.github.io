@@ -101,16 +101,16 @@ def p1(c):
     c.setFillColor(NAVY); c.setStrokeColor(NAVY); c.setLineWidth(1.2)
     c.roundRect(M, y-34, W-2*M, 34, 6, fill=1, stroke=1)
     c.setFillColor(colors.white); c.setFont('DVB', 12.5)
-    c.drawCentredString(W/2, y-22, 'EVERYTHING YOUR PARENTS OWN TODAY')
+    c.drawCentredString(W/2, y-22, 'EVERYTHING THE PARENTS (MOM AND DAD) OWN TODAY')
     y -= 34
     arrow_down(c, W/2, y-2, y-20)
     y -= 26
 
     items = [
         (S1, 1, 'It is already exempt', 'The homestead counts for nothing - at ANY value - as long as a spouse lives there. So does one car, at any value, plus household goods. For most families this is the largest piece of the estate, and it never had to be protected. It already is.'),
-        (S2, 2, 'It is protected for the spouse who stays home', 'Only ONE spouse applies. The other becomes the "community spouse" and keeps HALF of the couple\'s countable savings (at least $32,532, at most $162,660) plus up to $4,066.50 a month of income. That protection exists only while there is a spouse at home - which is why they never both apply at once.'),
+        (S2, 2, 'It is protected for the parent who stays home', 'Only ONE parent applies for Medicaid. The other parent becomes the "community spouse" and keeps HALF of the couple\'s countable savings (at least $32,532, at most $162,660) plus up to $4,066.50 a month of income. That protection exists only while there is a spouse at home - which is why they never both apply at once.'),
         (S3, 3, 'It gets turned into care', 'Money spent making the house work for them - ramps, a roll-in shower, wider doors, a ground-floor suite, lifts - is unlimited, has no waiting period, and Texas blesses it by name. Cash becomes care AND stays in an asset that is exempt for life.'),
-        (S4, 4, 'It gets turned into income', 'Retirement savings above the protected amount can be converted into a properly structured annuity paying the spouse at home a monthly income for life. Done right there is no penalty. Done wrong the whole purchase is penalized - attorney work.'),
+        (S4, 4, 'It gets turned into income', 'Retirement savings above the protected amount can be converted into a properly structured annuity paying the parent at home a monthly income for life. Done right there is no penalty. Done wrong the whole purchase is penalized - attorney work.'),
         (S4, 5, 'It moves early, and legally', 'Assets placed in an irrevocable trust are outside the test once five years have passed - so the clock is worth starting now. And because the caregiver is their DAUGHTER, the house itself can pass to her penalty-free after two years of live-in care. See page 3.'),
     ]
     ch = 78
@@ -130,9 +130,9 @@ def p1(c):
 
 # ---------------------------------------------------------------- page 2
 def p2(c):
-    page_bg(c); header(c, 'The single most important decision', 'One spouse applies. Never both.', 2)
+    page_bg(c); header(c, 'The single most important decision', 'One parent applies. Never both.', 2)
     y = H-118
-    y = para(c, 'Everything else in this plan is optional. This one is not. Texas protects the spouse who stays at home - but that protection exists only while there IS a spouse at home. The day the second one applies, it vanishes and the couple is measured together against $3,000.',
+    y = para(c, 'Everything else in this plan is optional. This one is not. Texas protects the parent who stays at home (the spouse of the one applying) - but that protection exists only while there IS a spouse at home. The day the second parent applies, it vanishes and the couple is measured together against $3,000.',
              M, y, W-2*M, 9.6, 13)
     y -= 12
 
@@ -145,7 +145,7 @@ def p2(c):
     c.setStrokeColor(LINE); c.setFillColor(colors.white); c.setLineWidth(0.8)
     c.roundRect(lx, base-14, colw, top-base+14, 7, fill=1, stroke=1)
     c.setFillColor(colors.HexColor('#9B2226')); c.setFont('DVB', 11.5)
-    c.drawCentredString(lx+colw/2, top-24, 'IF BOTH APPLY')
+    c.drawCentredString(lx+colw/2, top-24, 'IF BOTH PARENTS APPLY')
     c.setFillColor(INK2); c.setFont('DV', 8.6)
     c.drawCentredString(lx+colw/2, top-38, 'They are budgeted as a couple')
     bh = 4
@@ -168,9 +168,9 @@ def p2(c):
     c.setStrokeColor(LINE); c.setFillColor(colors.white); c.setLineWidth(0.8)
     c.roundRect(rx, base-14, colw, top-base+14, 7, fill=1, stroke=1)
     c.setFillColor(colors.HexColor('#1baf7a')); c.setFont('DVB', 11.5)
-    c.drawCentredString(rx+colw/2, top-24, 'IF ONLY ONE APPLIES')
+    c.drawCentredString(rx+colw/2, top-24, 'IF ONLY ONE PARENT APPLIES')
     c.setFillColor(INK2); c.setFont('DV', 8.6)
-    c.drawCentredString(rx+colw/2, top-38, 'The other is the "community spouse"')
+    c.drawCentredString(rx+colw/2, top-38, 'The other parent is the "community spouse"')
 
     by = base + 8
     blocks = [
@@ -245,9 +245,9 @@ def p_need(c):
     y = para(c, 'No. They are two of five ways to handle one specific slice of money - and there is a sixth choice, which is not to use Medicaid at all. Start by adding up the countable assets: everything EXCEPT the homestead, one car, household goods and prepaid funerals.', M, y, W-2*M, 9.6, 13)
     y -= 12
     bands = [
-        (S2, 'Under about $34,500', 'One spouse qualifies as things stand today. The spouse at home keeps the $32,532 floor, the applicant keeps $2,000. No trust. No annuity. Nothing to restructure.'),
-        (S3, '$34,500 to about $325,000', 'The spouse at home keeps HALF. The other half has to be spent or converted before the applying spouse is under $2,000. That half is the only money the tools below exist for.'),
-        (S4, 'Over about $325,000', 'The spouse at home keeps the $162,660 cap. Everything above it must be spent or converted - or the family decides Medicaid is not worth chasing (see below).'),
+        (S2, 'Under about $34,500', 'One parent qualifies as things stand today. The parent at home keeps the $32,532 floor, the applicant keeps $2,000. No trust. No annuity. Nothing to restructure.'),
+        (S3, '$34,500 to about $325,000', 'The parent at home keeps HALF. The other half has to be spent or converted before the applying parent is under $2,000. That half is the only money the tools below exist for.'),
+        (S4, 'Over about $325,000', 'The parent at home keeps the $162,660 cap. Everything above it must be spent or converted - or the family decides Medicaid is not worth chasing (see below).'),
     ]
     for col, t, b in bands:
         card(c, M, y-56, W-2*M, 56, col, None, t, b, 11, 8.8); y -= 63
@@ -257,7 +257,7 @@ def p_need(c):
         ('1', 'Spend it on exempt things', 'Remodel the homestead for accessibility, prepay both funerals, pay off the mortgage, replace the car. No penalty, no waiting, and the value stays in the family.'),
         ('2', 'List the land for sale', 'Real property genuinely on the market is exempt until it sells. No time limit.'),
         ('3', 'Pay their daughter - carefully', 'A written agreement for hands-on personal care and her documented lost wages. Texas gives no credit for cooking, cleaning or driving.'),
-        ('4', 'Annuity', 'Turns cash into monthly income for the spouse at home. Works immediately. Attorney only - a flawed one penalizes the whole purchase.'),
+        ('4', 'Annuity', 'Turns cash into monthly income for the parent at home. Works immediately. Attorney only - a flawed one penalizes the whole purchase.'),
         ('5', 'Irrevocable trust', 'Removes assets from the test - but only five years after funding. The slowest tool, so the earliest one to start.'),
     ]
     rh = 40
