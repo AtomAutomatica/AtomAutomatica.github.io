@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The B.T.C. Tin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500;600&family=Caveat:wght@600&display=swap">
+<style>
+:root{
+  color-scheme: dark;
+  --desk:#191715; --desk2:#221f1b; --ink:#ece7dc; --mute:#9d978b; --dim:#6a655c; --rule:#34302a;
+  --p0:#5a3a08; --p1:#a86e17; --p2:#f5b041; --p3:#f9cf82; --p4:#fde9c4;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --stamp:"Big Shoulders Stencil Display","Arial Narrow",Impact,sans-serif;
+  --hand:"Caveat","Bradley Hand","Segoe Print",cursive;
+}
+*{box-sizing:border-box}
+html{background:var(--desk)}
+body{margin:0;background:
+  radial-gradient(1200px 700px at 30% 20%, var(--desk2), var(--desk) 70%);
+  color:var(--ink);font-family:var(--mono);font-size:15px;line-height:1.55;min-height:100vh;
+  padding-inline:16px;padding-block:28px 60px}
+a{color:var(--p3)}
+a:focus-visible,button:focus-visible,.item:focus-visible{outline:2px solid var(--p3);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:start}
+@media (max-width:860px){.wrap{grid-template-columns:1fr;gap:28px}}
+
+.stage{position:relative}
+.stage svg{display:block;width:100%;height:auto;max-width:640px;margin:0 auto}
+.item{cursor:pointer;transition:transform .25s cubic-bezier(.2,.9,.3,1.2), filter .25s;
+  filter:drop-shadow(0 3px 3px rgba(0,0,0,.35));transform-box:fill-box;transform-origin:center}
+.item:hover,.item.on{transform:translateY(-6px) scale(1.035);filter:drop-shadow(0 14px 12px rgba(0,0,0,.45))}
+.item:focus{outline:none}
+.fs{font-family:var(--stamp)}.fm{font-family:var(--mono)}.fh{font-family:var(--hand)}
+@media (prefers-reduced-motion:reduce){.item{transition:none}.item:hover,.item.on{transform:none}}
+
+header .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin:0 0 6px}
+h1{font-family:var(--stamp);font-weight:900;font-size:clamp(44px,7vw,72px);line-height:.92;letter-spacing:.01em;margin:0 0 12px;color:var(--p2);text-wrap:balance}
+.lede{color:var(--mute);margin:0 0 22px;max-width:46ch}
+
+.paint{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding-block:14px;margin-bottom:22px}
+.paint .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+.lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.sw{appearance:none;border:1px solid var(--rule);background:transparent;color:var(--ink);font-family:var(--mono);font-size:12px;
+  display:inline-flex;align-items:center;gap:8px;padding:6px 10px 6px 6px;min-height:36px;cursor:pointer;border-radius:999px}
+.sw i{width:20px;height:20px;border-radius:50%;display:block;box-shadow:inset 0 -3px 4px rgba(0,0,0,.35), inset 0 2px 3px rgba(255,255,255,.35)}
+.sw[aria-pressed="true"]{border-color:var(--p2);color:var(--p3)}
+.sw input{width:20px;height:20px;border:0;padding:0;background:none;cursor:pointer}
+.why{font-size:12.5px;color:var(--mute);margin:10px 0 0;max-width:56ch}
+
+.detail{min-height:170px;margin-bottom:22px}
+.detail h2{font-family:var(--stamp);font-weight:700;font-size:30px;letter-spacing:.02em;margin:4px 0 6px;color:var(--ink)}
+.detail p{margin:0 0 10px;max-width:58ch}
+.detail .src{font-size:12px;color:var(--dim)}
+.detail ol{margin:6px 0 10px;padding-left:22px;font-size:13.5px}
+.detail li{margin:2px 0}
+.detail li span{color:var(--dim)}
+
+.inv{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px}
+@media (max-width:420px){.inv{grid-template-columns:1fr}}
+.inv button{appearance:none;background:none;border:0;border-bottom:1px dashed var(--rule);color:var(--mute);font:inherit;font-size:13px;
+  text-align:left;width:100%;padding:8px 0;cursor:pointer;display:flex;gap:10px;align-items:baseline}
+.inv button b{color:var(--dim);font-weight:500;font-variant-numeric:tabular-nums;font-size:11px}
+.inv button:hover,.inv button[aria-current="true"]{color:var(--ink)}
+.inv button[aria-current="true"] b{color:var(--p2)}
+footer{max-width:1120px;margin:40px auto 0;font-size:12px;color:var(--dim);border-top:1px solid var(--rule);padding-top:14px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="stage">
+    <svg viewBox="0 0 700 900" role="img" aria-labelledby="tinTitle">
+      <title id="tinTitle">An open hinged tin, painted, holding objects that represent Brandon</title>
+      <defs>
+        <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" style="stop-color:var(--p4)"/><stop offset=".25" style="stop-color:var(--p3)"/>
+          <stop offset=".6" style="stop-color:var(--p2)"/><stop offset="1" style="stop-color:var(--p1)"/>
+        </linearGradient>
+        <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" style="stop-color:var(--p1)"/><stop offset="1" style="stop-color:var(--p0)"/>
+        </linearGradient>
+        <radialGradient id="floorLid" cx=".35" cy=".35" r=".9">
+          <stop offset="0" style="stop-color:var(--p3)"/><stop offset=".55" style="stop-color:var(--p2)"/><stop offset="1" style="stop-color:var(--p1)"/>
+        </radialGradient>
+        <radialGradient id="floorBase" cx=".4" cy=".3" r=".95">
+          <stop offset="0" style="stop-color:var(--p3)"/><stop offset=".5" style="stop-color:var(--p2)"/><stop offset="1" style="stop-color:var(--p1)"/>
+        </radialGradient>
+        <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".45" stop-color="#fff" stop-opacity=".16"/>
+          <stop offset=".55" stop-color="#fff" stop-opacity=".05"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#f1f1ee"/><stop offset=".5" stop-color="#a9a9a4"/><stop offset="1" stop-color="#6d6d69"/>
+        </linearGradient>
+        <radialGradient id="gold" cx=".35" cy=".3" r=".8">
+          <stop offset="0" stop-color="#fff2b8"/><stop offset=".45" stop-color="#e2b23c"/><stop offset="1" stop-color="#8a5f10"/>
+        </radialGradient>
+        <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#2d2d30"/><stop offset="1" stop-color="#101012"/>
+        </linearGradient>
+        <radialGradient id="tort" cx=".4" cy=".35" r=".8">
+          <stop offset="0" stop-color="#8b4a1c"/><stop offset=".5" stop-color="#4a220c"/><stop offset="1" stop-color="#1f0e05"/>
+        </radialGradient>
+        <pattern id="tortSpots" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+          <ellipse cx="5" cy="6" rx="4" ry="2.4" fill="#c27a2e" opacity=".45"/><ellipse cx="13" cy="14" rx="3" ry="1.8" fill="#d99a45" opacity=".35"/>
+        </pattern>
+        <filter id="grain" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4"/>
+          <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .07 0"/>
+          <feComposite in2="SourceGraphic" operator="in"/>
+        </filter>
+      </defs>
+
+      <!-- ===== LID ===== -->
+      <rect x="8" y="8" width="684" height="428" rx="46" fill="url(#rim)"/>
+      <rect x="8" y="8" width="684" height="428" rx="46" fill="none" stroke-opacity=".55" stroke-width="2" style="stroke:var(--p0)"/>
+      <rect x="24" y="24" width="652" height="396" rx="34" fill="url(#wall)"/>
+      <rect x="34" y="32" width="632" height="376" rx="28" fill="url(#floorLid)"/>
+      <rect x="34" y="32" width="632" height="376" rx="28" fill="url(#sheen)"/>
+      <rect x="34" y="32" width="632" height="376" rx="28" fill="#000" filter="url(#grain)"/>
+
+      <!-- lid emboss -->
+      <g class="fs" font-weight="900" text-anchor="middle">
+        <text x="212" y="232" font-size="118" opacity=".55" transform="translate(-2,-2)" style="fill:var(--p4)">B·T·C</text>
+        <text x="212" y="232" font-size="118" opacity=".45" transform="translate(2,3)" style="fill:var(--p0)">B·T·C</text>
+        <text x="212" y="232" font-size="118" style="fill:var(--p2)">B·T·C</text>
+        <text x="212" y="282" font-size="21" letter-spacing="6" opacity=".6" style="fill:var(--p0)">ATOM · AUTOMATICA</text>
+        <text x="212" y="372" font-size="14" letter-spacing="5" opacity=".45" style="fill:var(--p0)">EST. 06·2025 · HANDLE WITH CARE</text>
+      </g>
+
+      <!-- Frame card tucked in lid -->
+      <g transform="translate(420 78) rotate(3)">
+        <g class="item" data-id="frame" tabindex="0" role="button" aria-label="The Frame plan card">
+          <rect width="222" height="176" rx="4" fill="#111"/>
+          <rect x=".5" y=".5" width="221" height="175" rx="4" fill="none" stroke="#2a2a2a"/>
+          <text x="12" y="20" class="fm" font-size="9" letter-spacing="1.6" fill="#f5b041">THE FRAME · PLAN</text>
+          <text x="210" y="20" class="fm" font-size="8" text-anchor="end" fill="#8a877f">RIVEN</text>
+          <line x1="12" y1="104" x2="210" y2="104" stroke="#2a2a2a"/>
+          <line x1="12" y1="84" x2="210" y2="84" stroke="#8a877f" stroke-dasharray="4 4" stroke-width="1"/>
+          <polyline points="12,42 32,50 48,46 66,62 82,58 100,78 114,70 128,86 140,80 156,66 172,58 190,44 210,36" fill="none" stroke="#e8e6e1" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline points="12,56 60,60 110,68 160,68 210,60" fill="none" stroke="#4c8bf5" stroke-width="1.4" opacity=".9"/>
+          <polyline points="12,150 40,140 70,156 100,146 128,140 156,128 184,120 210,112" fill="none" stroke="#f5b041" stroke-width="1.6"/>
+          <circle cx="128" cy="86" r="6" fill="#2ecc71"/><text x="128" y="89" class="fm" font-size="8" font-weight="600" text-anchor="middle" fill="#0d0d0d">4</text>
+          <text x="12" y="98" class="fm" font-size="7" fill="#8a877f">50-day support</text>
+          <text x="12" y="166" class="fm" font-size="7" fill="#8a877f">RSI divergence</text>
+          <g class="fm" font-size="7" text-anchor="middle">
+            <rect x="120" y="159" width="14" height="11" fill="none" stroke="#2a2a2a"/><text x="127" y="167" fill="#5c5a55">1</text>
+            <rect x="135" y="159" width="14" height="11" fill="none" stroke="#2a2a2a"/><text x="142" y="167" fill="#5c5a55">2</text>
+            <rect x="150" y="159" width="14" height="11" fill="none" stroke="#2a2a2a"/><text x="157" y="167" fill="#5c5a55">3</text>
+            <rect x="165" y="159" width="14" height="11" fill="none" stroke="#f5b041"/><text x="172" y="167" fill="#f5b041">4</text>
+            <rect x="180" y="159" width="14" height="11" fill="none" stroke="#2a2a2a"/><text x="187" y="167" fill="#5c5a55">5</text>
+            <rect x="195" y="159" width="14" height="11" fill="none" stroke="#2a2a2a"/><text x="202" y="167" fill="#5c5a55">6</text>
+          </g>
+        </g>
+      </g>
+      <!-- lid corner tabs holding the card -->
+      <path d="M414 72 l34 0 l-34 34 z" fill="url(#rim)" opacity=".95"/>
+      <path d="M646 262 l0 -34 l-34 34 z" fill="url(#rim)" opacity=".95" transform="rotate(3 630 250)"/>
+
+      <!-- ===== HINGE ===== -->
+      <rect x="130" y="424" width="80" height="22" rx="4" fill="url(#steel)"/>
+      <rect x="490" y="424" width="80" height="22" rx="4" fill="url(#steel)"/>
+      <line x1="130" y1="435" x2="570" y2="435" stroke="#000" stroke-opacity=".35" stroke-width="2"/>
+      <rect x="275" y="444" width="100" height="10" rx="3" fill="url(#steel)"/>
+
+      <!-- ===== BASE ===== -->
+      <rect x="8" y="446" width="684" height="446" rx="46" fill="url(#rim)"/>
+      <rect x="8" y="446" width="684" height="446" rx="46" fill="none" stroke-opacity=".55" stroke-width="2" style="stroke:var(--p0)"/>
+      <rect x="22" y="460" width="656" height="418" rx="36" fill="url(#wall)"/>
+      <rect x="36" y="474" width="628" height="392" rx="28" fill="url(#floorBase)"/>
+      <rect x="36" y="474" width="628" height="392" rx="28" fill="url(#sheen)" transform="translate(0 0)"/>
+      <rect x="36" y="474" width="628" height="392" rx="28" fill="#000" filter="url(#grain)"/>
+
+      <!-- folded note (under things) -->
+      <g transform="translate(58 758) rotate(-3)">
+        <g class="item" data-id="note" tabindex="0" role="button" aria-label="Folded note">
+          <path d="M0 0 H206 V84 H0 Z" fill="#f3ecdc"/>
+          <path d="M103 0 V84" stroke="#d8ceb8" stroke-width="1.2"/>
+          <path d="M0 0 H206 V84 H0 Z" fill="none" stroke="#cfc3aa"/>
+          <text x="12" y="30" class="fh" font-size="21" fill="#2b2a33">numbers from the files,</text>
+          <text x="12" y="54" class="fh" font-size="21" fill="#2b2a33">not typed.</text>
+          <text x="194" y="76" class="fh" font-size="18" text-anchor="end" fill="#8a3b2a">— K &amp; B</text>
+        </g>
+      </g>
+
+      <!-- ticker strip -->
+      <g transform="translate(64 700) rotate(-5)">
+        <g class="item" data-id="tickers" tabindex="0" role="button" aria-label="Ticker tape strip">
+          <path d="M0 0 H236 l-6 8 6 8 -6 8 6 8 -6 8 H0 Z" fill="#f7f4ec"/>
+          <text x="10" y="26" class="fm" font-size="12.5" font-weight="600" fill="#1c1c1c" letter-spacing=".5">MSTR COIN MARA RIOT</text>
+          <text x="10" y="38" class="fm" font-size="7.5" fill="#6d6a63" letter-spacing="1">HOOD · NBIS · QQQ · 20-DAY BEST HIGH</text>
+          <text x="10" y="11" class="fm" font-size="7" fill="#2e9a5a">▲ replays</text>
+        </g>
+      </g>
+
+      <!-- Atlas key card -->
+      <g transform="translate(62 500) rotate(-7)">
+        <g class="item" data-id="atlas" tabindex="0" role="button" aria-label="Atlas key card">
+          <rect width="244" height="152" rx="12" fill="url(#card)"/>
+          <rect x=".75" y=".75" width="242.5" height="150.5" rx="11.5" fill="none" stroke="#3b3b40" stroke-width="1.5"/>
+          <text x="20" y="44" class="fs" font-weight="900" font-size="38" letter-spacing="3" style="fill:var(--p2)">ATLAS</text>
+          <text x="20" y="64" class="fm" font-size="9" letter-spacing="1.8" fill="#9d9aa3">FLEET KEY · NIST P-256</text>
+          <rect x="20" y="86" width="40" height="30" rx="5" fill="url(#gold)"/>
+          <path d="M20 101 H60 M40 86 V116 M30 86 V116 M50 86 V116" stroke="#8a5f10" stroke-width=".8" opacity=".7"/>
+          <g fill="none" stroke="#6b6b72" stroke-width="2" stroke-linecap="round">
+            <path d="M78 94 a10 10 0 0 1 0 14"/><path d="M84 89 a17 17 0 0 1 0 24"/><path d="M90 84 a24 24 0 0 1 0 34"/>
+          </g>
+          <text x="224" y="136" class="fm" font-size="7.5" text-anchor="end" fill="#6b6b72">.well-known/appspecific</text>
+        </g>
+      </g>
+
+      <!-- Atom pin -->
+      <g transform="translate(378 560)">
+        <g class="item" data-id="atom" tabindex="0" role="button" aria-label="Atom Automatica enamel pin">
+          <circle r="46" fill="url(#steel)"/>
+          <circle r="41" fill="#16161a"/>
+          <g fill="none" stroke-width="3.2" style="stroke:var(--p2)">
+            <ellipse rx="31" ry="11"/>
+            <ellipse rx="31" ry="11" transform="rotate(60)"/>
+            <ellipse rx="31" ry="11" transform="rotate(120)"/>
+          </g>
+          <circle r="6" style="fill:var(--p3)"/>
+          <circle cx="31" cy="0" r="3" fill="#ece7dc"/>
+        </g>
+      </g>
+
+      <!-- guitar pick -->
+      <g transform="translate(476 628) rotate(22)">
+        <g class="item" data-id="pick" tabindex="0" role="button" aria-label="Guitar pick">
+          <path d="M0 -30 C 26 -30 36 -18 30 0 C 24 18 10 34 0 38 C -10 34 -24 18 -30 0 C -36 -18 -26 -30 0 -30 Z" fill="url(#tort)"/>
+          <path d="M0 -30 C 26 -30 36 -18 30 0 C 24 18 10 34 0 38 C -10 34 -24 18 -30 0 C -36 -18 -26 -30 0 -30 Z" fill="url(#tortSpots)"/>
+          <text y="4" class="fm" font-size="8" text-anchor="middle" fill="#f3d7a8" opacity=".85">HEAVY</text>
+        </g>
+      </g>
+
+      <!-- Bitcoin coin -->
+      <g transform="translate(578 548)">
+        <g class="item" data-id="btc" tabindex="0" role="button" aria-label="Bitcoin coin">
+          <circle r="60" fill="#6f4a0b"/>
+          <circle r="57" fill="url(#gold)"/>
+          <circle r="47" fill="none" stroke="#9b6c14" stroke-width="2"/>
+          <circle r="44" fill="none" stroke="#fff3c4" stroke-opacity=".5" stroke-width="1"/>
+          <text y="22" class="fm" font-weight="600" font-size="62" text-anchor="middle" fill="#8a5f10" opacity=".55" transform="translate(1.5 2)">₿</text>
+          <text y="22" class="fm" font-weight="600" font-size="62" text-anchor="middle" fill="#fff0b3">₿</text>
+        </g>
+      </g>
+
+      <!-- cassette -->
+      <g transform="translate(300 690) rotate(3)">
+        <g class="item" data-id="tape" tabindex="0" role="button" aria-label="Cassette mixtape">
+          <rect width="236" height="148" rx="10" fill="#26221f"/>
+          <rect x="1" y="1" width="234" height="146" rx="9" fill="none" stroke="#3d3833" stroke-width="2"/>
+          <rect x="14" y="12" width="208" height="86" rx="5" fill="#efe6d2"/>
+          <rect x="14" y="12" width="208" height="18" rx="5" style="fill:var(--p2)"/>
+          <rect x="14" y="24" width="208" height="6" style="fill:var(--p2)"/>
+          <text x="22" y="25" class="fm" font-size="9" font-weight="600" letter-spacing="1.5" fill="#1c1a17">DESK MIX · SIDE B</text>
+          <text x="22" y="46" class="fh" font-size="16" fill="#2b2a33">Radiohead, Soundgarden +7</text>
+          <rect x="54" y="56" width="128" height="34" rx="17" fill="#1a1715"/>
+          <circle cx="76" cy="73" r="12" fill="#e9e3d6"/><circle cx="160" cy="73" r="12" fill="#e9e3d6"/>
+          <circle cx="76" cy="73" r="5" fill="#1a1715"/><circle cx="160" cy="73" r="5" fill="#1a1715"/>
+          <rect x="96" y="66" width="44" height="14" rx="2" fill="#3a2a1c"/>
+          <path d="M60 148 L72 118 H164 L176 148" fill="#1d1a18"/>
+          <circle cx="92" cy="134" r="4" fill="#0e0c0b"/><circle cx="144" cy="134" r="4" fill="#0e0c0b"/>
+        </g>
+      </g>
+
+      <!-- Riven dog tag + chain -->
+      <path d="M560 870 C 600 830, 540 800, 596 776 S 640 720, 612 690" fill="none" stroke="#b9b9b4" stroke-width="3.2" stroke-dasharray="1 5.2" stroke-linecap="round"/>
+      <g transform="translate(600 760) rotate(14)">
+        <g class="item" data-id="riven" tabindex="0" role="button" aria-label="Riven dog tag">
+          <rect x="-40" y="-64" width="80" height="128" rx="26" fill="url(#steel)"/>
+          <rect x="-34" y="-58" width="68" height="116" rx="21" fill="none" stroke="#fff" stroke-opacity=".5"/>
+          <circle cx="0" cy="-48" r="5" fill="#4d4d4a"/>
+          <g class="fm" text-anchor="middle" fill="#3a3a37">
+            <text y="-14" font-size="15" font-weight="600" letter-spacing="1.5">RIVEN</text>
+            <text y="4" font-size="7.5" letter-spacing="1">AGENT</text>
+            <text y="16" font-size="7.5" letter-spacing="1">THE FRAME</text>
+            <text y="36" font-size="7.5" letter-spacing="1">09·2026</text>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <div>
+    <header>
+      <p class="eyebrow">A tin for Brandon · packed from your repos &amp; Spotify</p>
+      <h1>The B.T.C. Tin</h1>
+      <p class="lede">Nine things that say who you are, packed into a painted pocket tin. Tap anything inside to see why it made the cut.</p>
+    </header>
+
+    <section class="paint" aria-labelledby="paintLbl">
+      <span class="lbl" id="paintLbl">Paint</span>
+      <div class="row" id="swatches"></div>
+      <p class="why" id="paintWhy"></p>
+    </section>
+
+    <section class="detail" id="detail" aria-live="polite"></section>
+
+    <span class="lbl">Inventory</span>
+    <ul class="inv" id="inv"></ul>
+  </div>
+</div>
+<footer>Sources: github.com/AtomAutomatica (riven-frame, AtomAutomatica.github.io, commit history) and your Spotify top artists and recent plays, read on 24 Sep 2026.</footer>
+
+<script>
+const ITEMS = {
+  frame:{n:"The Frame card",h:"<p>One setup, one frame: price pulls back to 50-day support, RSI shows divergence, and the buy is stage four of six. It's the plan you and Kevin actually trade, animated in <b>riven-frame</b>.</p>",s:"riven-frame/index.html"},
+  btc:{n:"Bitcoin coin",h:"<p>BTC is your initials, and also the coin the whole Frame watchlist orbits. Your repo calls it “the BTC frame,” so it works both ways.</p>",s:"riven-frame repo description; commit author name"},
+  atlas:{n:"Atlas key card",h:"<p>Atlas is your agent that talks to a Tesla through the Fleet API. This site exists to host its public key, a 256-bit NIST P-256 key at <code>.well-known/appspecific/</code>.</p>",s:"AtomAutomatica.github.io/.well-known"},
+  riven:{n:"Riven dog tag",h:"<p>Riven is the agent that commits the replays and lab pages. Its name is on every recent commit in riven-frame, so it gets a tag on a chain.</p>",s:"riven-frame commit author: Riven"},
+  atom:{n:"Atom Automatica pin",h:"<p>Your handle, as an enamel pin. The logo is three orbits and a nucleus, since you build things that run themselves.</p>",s:"github.com/AtomAutomatica"},
+  tickers:{n:"Ticker tape",h:"<p>The names in your replay folder: MSTR, COIN, MARA, RIOT, HOOD, NBIS and QQQ. Each one is scored by its 20-day best high against a baseline.</p>",s:"riven-frame/replay/manifest.json"},
+  note:{n:"Folded note",h:"<p>“Numbers from the files, not typed.” That's your own rule from the Frame page: every figure has to trace back to a source. K &amp; B is Kevin and Brandon.</p>",s:"riven-frame/index.html, section 04 · Sources"},
+  pick:{n:"Guitar pick",h:"<p>Soundgarden and Audioslave both sit in your Spotify top artists, so the heavy Chris Cornell side of your taste gets a heavy pick.</p>",s:"Spotify · top artists"},
+  tape:{n:"Desk mix cassette",h:`<p>Your Spotify, dubbed to tape. It's grunge and art rock with a Texas streak, plus one Barber adagio for the long nights.</p><ol>
+    <li><a href="https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb" target="_blank" rel="noopener">Radiohead</a> <span>top artist</span></li>
+    <li><a href="https://open.spotify.com/artist/5xUf6j4upBrXZPg6AI4MRK" target="_blank" rel="noopener">Soundgarden</a> <span>top artist</span></li>
+    <li><a href="https://open.spotify.com/artist/2ziB7fzrXBoh1HUPS6sVFn" target="_blank" rel="noopener">Audioslave</a> <span>top artist</span></li>
+    <li><a href="https://open.spotify.com/artist/6TLwD7HPWuiOzvXEa3oCNe" target="_blank" rel="noopener">Oliver Tree</a> <span>top artist</span></li>
+    <li><a href="https://open.spotify.com/artist/3qWUrXaaCWw9NohGOAKCbD" target="_blank" rel="noopener">Victor Jones</a> <span>top artist</span></li>
+    <li><a href="https://open.spotify.com/track/24ntSW3QVJzR79lHAAOTaY" target="_blank" rel="noopener">Texas Sun</a> <span>Khruangbin &amp; Leon Bridges</span></li>
+    <li><a href="https://open.spotify.com/track/6vOeokRJNZjouabFGDLH1C" target="_blank" rel="noopener">Levels</a> <span>BigXthaPlug</span></li>
+    <li><a href="https://open.spotify.com/track/3PngDJnjp0Gf8dvL7ufWVg" target="_blank" rel="noopener">i hate sundays</a> <span>Murr</span></li>
+    <li><a href="https://open.spotify.com/track/1kFjf2t7doDyI9OnFepWzf" target="_blank" rel="noopener">Adagio for Strings</a> <span>Bernstein · NY Phil</span></li></ol>`,s:"Spotify · top artists and recently played"}
+};
+const ORDER=["frame","btc","atlas","riven","atom","tickers","note","pick","tape"];
+
+const PAINTS=[
+  {id:"amber",n:"Frame amber",hex:"#f5b041",why:"My best guess at your color: amber (#f5b041) is the accent on everything you've built. It's the brand mark, the headline highlight and the RSI line on the Frame page. If that's wrong, pick your real color below."},
+  {id:"green",n:"Buy green",hex:"#2ecc71",why:"#2ecc71 is the stage-four buy dot on the Frame."},
+  {id:"blue",n:"50-day blue",hex:"#4c8bf5",why:"#4c8bf5 is the moving-average line on the Frame."},
+  {id:"red",n:"Stop red",hex:"#ef5350",why:"#ef5350 is the red for losing verdicts on the Frame."}
+];
+function hexToRgb(h){h=h.replace("#","");return[0,2,4].map(i=>parseInt(h.slice(i,i+2),16))}
+function mix(a,b,t){return"#"+a.map((v,i)=>Math.round(v+(b[i]-v)*t).toString(16).padStart(2,"0")).join("")}
+function paint(hex){
+  const c=hexToRgb(hex),K=[20,14,8],W=[255,255,255],r=document.documentElement.style;
+  r.setProperty("--p0",mix(c,K,.68));r.setProperty("--p1",mix(c,K,.32));r.setProperty("--p2",hex);
+  r.setProperty("--p3",mix(c,W,.38));r.setProperty("--p4",mix(c,W,.72));
+}
+const sw=document.getElementById("swatches"),why=document.getElementById("paintWhy");
+function setPaint(p,save){
+  paint(p.hex);why.textContent=p.why;
+  sw.querySelectorAll(".sw").forEach(b=>b.setAttribute("aria-pressed",b.dataset.id===p.id));
+  if(save){try{localStorage.setItem("tinPaint",JSON.stringify(p))}catch(e){}}
+}
+PAINTS.forEach(p=>{
+  const b=document.createElement("button");b.className="sw";b.dataset.id=p.id;b.type="button";
+  b.innerHTML=`<i style="background:${p.hex}"></i>${p.n}`;b.onclick=()=>setPaint(p,true);sw.appendChild(b);
+});
+const custom=document.createElement("label");custom.className="sw";custom.dataset.id="custom";
+custom.innerHTML=`<input type="color" id="customPaint" value="#7a4fd6" aria-label="Pick your own paint color">Your color`;
+sw.appendChild(custom);
+custom.querySelector("input").addEventListener("input",e=>setPaint({id:"custom",hex:e.target.value,why:`Repainted in ${e.target.value}. The tin remembers this color in your browser.`},true));
+
+let saved=null;try{saved=JSON.parse(localStorage.getItem("tinPaint"))}catch(e){}
+if(saved&&/^#[0-9a-f]{6}$/i.test(saved.hex)){setPaint(saved,false);if(saved.id==="custom")custom.querySelector("input").value=saved.hex}else setPaint(PAINTS[0],false);
+
+const detail=document.getElementById("detail"),inv=document.getElementById("inv");
+ORDER.forEach((id,i)=>{
+  const li=document.createElement("li"),b=document.createElement("button");
+  b.type="button";b.dataset.id=id;b.innerHTML=`<b>${String(i+1).padStart(2,"0")}</b>${ITEMS[id].n}`;
+  b.onclick=()=>show(id);li.appendChild(b);inv.appendChild(li);
+});
+function show(id){
+  const it=ITEMS[id];
+  detail.innerHTML=`<span class="lbl">In the tin</span><h2>${it.n}</h2>${it.h}<p class="src">Source: ${it.s}</p>`;
+  document.querySelectorAll(".item").forEach(g=>g.classList.toggle("on",g.dataset.id===id));
+  inv.querySelectorAll("button").forEach(b=>b.setAttribute("aria-current",b.dataset.id===id));
+}
+document.querySelectorAll(".item").forEach(g=>{
+  g.addEventListener("click",()=>show(g.dataset.id));
+  g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();show(g.dataset.id)}});
+});
+show("frame");
+</script>
+</body>
+</html>
