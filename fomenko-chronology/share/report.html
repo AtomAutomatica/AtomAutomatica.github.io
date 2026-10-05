@@ -1,0 +1,175 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Two Calendars — Riven read</title>
+<style>
+
+@font-face{font-family:Inter;src:url(file:///home/user/AtomAutomatica.github.io/fomenko-chronology/fonts/Inter-Regular.ttf);font-weight:400}
+@font-face{font-family:Inter;src:url(file:///home/user/AtomAutomatica.github.io/fomenko-chronology/fonts/Inter-Italic.ttf);font-weight:400;font-style:italic}
+@font-face{font-family:Inter;src:url(file:///home/user/AtomAutomatica.github.io/fomenko-chronology/fonts/Inter-Medium.ttf);font-weight:500}
+@font-face{font-family:Inter;src:url(file:///home/user/AtomAutomatica.github.io/fomenko-chronology/fonts/Inter-SemiBold.ttf);font-weight:600}
+@font-face{font-family:Inter;src:url(file:///home/user/AtomAutomatica.github.io/fomenko-chronology/fonts/Inter-Bold.ttf);font-weight:700}
+@font-face{font-family:Mono;src:url(file:///home/user/AtomAutomatica.github.io/fomenko-chronology/fonts/JetBrainsMono-Regular.ttf);font-weight:400}
+@font-face{font-family:Mono;src:url(file:///home/user/AtomAutomatica.github.io/fomenko-chronology/fonts/JetBrainsMono-Italic.ttf);font-weight:400;font-style:italic}
+@font-face{font-family:Mono;src:url(file:///home/user/AtomAutomatica.github.io/fomenko-chronology/fonts/JetBrainsMono-Medium.ttf);font-weight:500}
+@font-face{font-family:Mono;src:url(file:///home/user/AtomAutomatica.github.io/fomenko-chronology/fonts/JetBrainsMono-Bold.ttf);font-weight:700}
+
+@page{size:Letter;margin:0.55in 0.6in 0.6in}
+:root{--bg:#ffffff;--ink:#1c1b19;--mute:#6b6862;--rule:#d9d6cf;--acc:#1f5fbf;--prop:#c2560e;
+--band:#f5f4f0;--head:#faf9f6}
+html{background:var(--bg)}
+body{margin:0;color:var(--ink);font:9.8pt/1.5 Inter,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.mono,h1,h2,.stamp,table.t th,.k,.num,.sh,.mv,.tag,.strip .l,.strip .v,.lede{font-family:Mono,monospace}
+h1{font-size:21pt;line-height:1.05;letter-spacing:.01em;text-transform:uppercase;margin:0 0 6px}
+h1 small{display:block;font-size:8pt;letter-spacing:.18em;color:var(--mute);margin-top:8px;font-weight:400}
+.lede{border-top:1px solid var(--rule);padding-top:8px;margin-top:10px;font-size:9pt;font-style:italic;color:var(--mute)}
+h2{font-size:8.6pt;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin:22px 0 8px;
+  border-bottom:1px solid var(--rule);padding-bottom:5px;font-weight:500;break-after:avoid}
+p{margin:7px 0;max-width:6.9in}
+strong{color:var(--prop);font-weight:600}
+.b{color:var(--acc);font-weight:600} .o{color:var(--prop);font-weight:600}
+.strip{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--rule);margin:14px 0 4px}
+.strip div{padding:9px 10px;border-right:1px solid var(--rule)} .strip div:last-child{border-right:0}
+.strip .l{font-size:6.6pt;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.strip .v{font-size:15pt;font-weight:700;margin-top:3px;line-height:1}
+table.t{width:100%;border-collapse:collapse;font-size:8.6pt;border:1px solid var(--rule);margin:8px 0}
+table.t th{text-align:left;background:var(--head);color:var(--mute);font-weight:500;letter-spacing:.08em;
+  text-transform:uppercase;font-size:6.6pt;padding:6px 7px;border-bottom:1px solid var(--rule)}
+table.t td{padding:3px 7px;border-bottom:1px solid var(--rule);vertical-align:middle}
+table.t tbody tr:nth-child(even) td{background:var(--band)}
+table.t tr{break-inside:avoid}
+.k{font-size:6.6pt;color:var(--mute);letter-spacing:.04em}
+td.a{color:var(--acc);font-weight:600} td.p{color:var(--prop);font-weight:600}
+td.mv,td.sh{font-size:8pt;white-space:nowrap} td.sv{width:2.1in}
+td.num{font-weight:700;color:var(--prop);width:16px}
+.tag{font-size:6.2pt;letter-spacing:.1em;padding:2px 5px;border:1px solid;white-space:nowrap}
+.tag.none{color:var(--mute)} .tag.split{color:#b0302a}
+ol,ul{padding-left:18px;margin:6px 0;max-width:6.9in} li{margin:4px 0}
+.leg{font-family:Mono;font-size:7.4pt;color:var(--mute);display:flex;gap:16px;flex-wrap:wrap;margin:6px 0 2px}
+.leg i{display:inline-block;width:12px;height:8px;margin-right:5px;vertical-align:middle}
+.fan{border:1px solid var(--rule);background:var(--head);padding:10px 12px;margin:8px 0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.stamp{color:var(--mute);font-size:7.6pt;letter-spacing:.08em;text-transform:uppercase;margin-top:18px;
+  border-top:1px solid var(--rule);padding-top:8px}
+.pb{break-before:page}
+.src{font-size:7.6pt;color:var(--mute);line-height:1.5} .src b{color:var(--ink);font-weight:600}
+img.poster{width:100%;border:1px solid var(--rule);display:block;margin-top:8px}
+</style></head><body>
+
+<h1>Two calendars, one past<small>Accepted chronology vs. the Fomenko–Nosovsky “New Chronology” · a Riven read</small></h1>
+<p class="lede">Written 10/5/2026. Every number is from the authors’ own PDFs or a museum, university or antiquities page.
+Where their printed numbers disagree with each other, both are shown. The page beats the summary.</p>
+
+<div class="strip">
+<div><div class="l">Subjects</div><div class="v">10</div></div>
+<div><div class="l">Median move</div><div class="v">≈1,800y</div></div>
+<div><div class="l">Shift families</div><div class="v">3</div></div>
+<div><div class="l">Ch.6 examples</div><div class="v">20</div></div>
+<div><div class="l">No offset printed</div><div class="v">4/20</div></div>
+</div>
+
+<h2>1. The short version</h2>
+<p>Fomenko and Nosovsky say most of “ancient” history is medieval history copied backward. I put ten of their cases on one axis, 3100 BCE to 2026 CE. <span class="b">Blue</span> is the accepted date. <span class="o">Orange</span> is theirs. Every gap is counted without a year 0.</p>
+<p>Eight of the ten have a number. Their median move is <strong>about 1,800 years later</strong>. The biggest is the Great Pyramid: Khufu’s reign, c. 2589–2566 BCE, moved into a 14th–16th-century build era. That is +3,866 to +4,188 years. The smallest is Rome, Sulla to Caracalla, moved onto the Holy Roman Empire: +1,037 to +1,046 years. Egypt and Classical Greece don’t get a number. They are placed as whole eras inside the 11th–16th centuries.</p>
+
+<table class="t"><thead><tr><th>Subject</th><th>Accepted</th><th>Proposed</th><th>Move (yrs)</th><th>3100 BCE → now</th></tr></thead>
+<tbody>
+<tr><td><b>Pharaonic Egypt</b><div class="k">era vs era</div></td>
+<td class="a">c. 3100–30 BCE</td><td class="p">11th–16th c. CE</td><td class="mv">no single offset</td>
+<td class="sv"><svg width="0" height="0" style="position:absolute"><defs><pattern id="h1f5fbf" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#1f5fbf"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern><pattern id="hc2560e" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#c2560e"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern></defs></svg><svg viewBox="0 0 300 30" width="100%" style="display:block"><line x1="12.4" x2="12.4" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="68.2" x2="68.2" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="124.1" x2="124.1" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="235.7" x2="235.7" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="291.5" x2="291.5" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="179.9" x2="179.9" y1="2" y2="28" stroke="#6b6862" stroke-width="1" stroke-dasharray="2 2"/><line x1="293.0" x2="293.0" y1="0" y2="30" stroke="#e5343b" stroke-width="2"/><path d="M92.5,15.6 C92.5,15.6 252.5,15.6 252.5,14.6" fill="none" stroke="#6b6862" stroke-width="1.2" stroke-dasharray="3 2"/><rect x="6.8" y="3.6" width="171.4" height="12" fill="#1f5fbf" fill-opacity=".22" stroke="#1f5fbf" stroke-dasharray="4 2"/><rect x="235.7" y="15.6" width="33.4" height="12" fill="#c2560e" fill-opacity=".22" stroke="#c2560e" stroke-dasharray="4 2"/></svg></td></tr>
+<tr><td><b>Great Pyramid</b><div class="k">builder’s reign vs build era</div></td>
+<td class="a">Khufu, c. 2589–2566 BCE</td><td class="p">14th–16th c. CE</td><td class="mv">+3,866 to +4,188</td>
+<td class="sv"><svg width="0" height="0" style="position:absolute"><defs><pattern id="h1f5fbf" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#1f5fbf"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern><pattern id="hc2560e" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#c2560e"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern></defs></svg><svg viewBox="0 0 300 30" width="100%" style="display:block"><line x1="12.4" x2="12.4" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="68.2" x2="68.2" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="124.1" x2="124.1" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="235.7" x2="235.7" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="291.5" x2="291.5" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="179.9" x2="179.9" y1="2" y2="28" stroke="#6b6862" stroke-width="1" stroke-dasharray="2 2"/><line x1="293.0" x2="293.0" y1="0" y2="30" stroke="#e5343b" stroke-width="2"/><path d="M36.0,15.6 C36.0,15.6 260.8,15.6 260.8,14.6" fill="none" stroke="#6b6862" stroke-width="1.2" stroke-dasharray="3 2"/><rect x="35.3" y="4.6" width="4.0" height="10" fill="#1f5fbf"/><rect x="252.5" y="16.6" width="16.7" height="10" fill="url(#hc2560e)" stroke="#c2560e" stroke-width="1.2"/></svg></td></tr>
+<tr><td><b>Senenmut ceiling</b><div class="k">artwork vs sky reading</div></td>
+<td class="a">c. 1473–1458 BCE</td><td class="p">1007 CE</td><td class="mv">+2,464 to +2,479</td>
+<td class="sv"><svg width="0" height="0" style="position:absolute"><defs><pattern id="h1f5fbf" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#1f5fbf"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern><pattern id="hc2560e" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#c2560e"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern></defs></svg><svg viewBox="0 0 300 30" width="100%" style="display:block"><line x1="12.4" x2="12.4" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="68.2" x2="68.2" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="124.1" x2="124.1" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="235.7" x2="235.7" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="291.5" x2="291.5" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="179.9" x2="179.9" y1="2" y2="28" stroke="#6b6862" stroke-width="1" stroke-dasharray="2 2"/><line x1="293.0" x2="293.0" y1="0" y2="30" stroke="#e5343b" stroke-width="2"/><path d="M98.1,15.6 C98.1,15.6 236.1,15.6 236.1,14.6" fill="none" stroke="#6b6862" stroke-width="1.2" stroke-dasharray="3 2"/><rect x="97.6" y="4.6" width="4.0" height="10" fill="url(#h1f5fbf)" stroke="#1f5fbf" stroke-width="1.2"/><rect x="231.1" y="16.6" width="10" height="10" fill="#c2560e" transform="rotate(45 236.1 21.6)" stroke="#ffffff" stroke-width="1"/></svg></td></tr>
+<tr><td><b>Seti I</b><div class="k">reign vs two zodiac readings</div></td>
+<td class="a">c. 1294–1279 BCE</td><td class="p">969 or 1206 CE</td><td class="mv">+2,247…+2,499</td>
+<td class="sv"><svg width="0" height="0" style="position:absolute"><defs><pattern id="h1f5fbf" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#1f5fbf"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern><pattern id="hc2560e" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#c2560e"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern></defs></svg><svg viewBox="0 0 300 30" width="100%" style="display:block"><line x1="12.4" x2="12.4" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="68.2" x2="68.2" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="124.1" x2="124.1" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="235.7" x2="235.7" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="291.5" x2="291.5" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="179.9" x2="179.9" y1="2" y2="28" stroke="#6b6862" stroke-width="1" stroke-dasharray="2 2"/><line x1="293.0" x2="293.0" y1="0" y2="30" stroke="#e5343b" stroke-width="2"/><path d="M108.1,15.6 C108.1,15.6 240.6,15.6 240.6,14.6" fill="none" stroke="#6b6862" stroke-width="1.2" stroke-dasharray="3 2"/><rect x="107.6" y="4.6" width="4.0" height="10" fill="#1f5fbf"/><rect x="229.0" y="16.6" width="10" height="10" fill="#c2560e" transform="rotate(45 234.0 21.6)" stroke="#ffffff" stroke-width="1"/><rect x="242.2" y="16.6" width="10" height="10" fill="#c2560e" transform="rotate(45 247.2 21.6)" stroke="#ffffff" stroke-width="1"/></svg></td></tr>
+<tr><td><b>Round Dendera zodiac</b><div class="k">carved sky vs reading</div></td>
+<td class="a">50 BCE</td><td class="p">20 Mar 1185 CE</td><td class="mv">+1,234</td>
+<td class="sv"><svg width="0" height="0" style="position:absolute"><defs><pattern id="h1f5fbf" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#1f5fbf"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern><pattern id="hc2560e" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#c2560e"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern></defs></svg><svg viewBox="0 0 300 30" width="100%" style="display:block"><line x1="12.4" x2="12.4" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="68.2" x2="68.2" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="124.1" x2="124.1" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="235.7" x2="235.7" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="291.5" x2="291.5" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="179.9" x2="179.9" y1="2" y2="28" stroke="#6b6862" stroke-width="1" stroke-dasharray="2 2"/><line x1="293.0" x2="293.0" y1="0" y2="30" stroke="#e5343b" stroke-width="2"/><path d="M177.1,15.6 C177.1,15.6 246.0,15.6 246.0,14.6" fill="none" stroke="#6b6862" stroke-width="1.2" stroke-dasharray="3 2"/><rect x="172.1" y="4.6" width="10" height="10" fill="#1f5fbf" transform="rotate(45 177.1 9.6)" stroke="#ffffff" stroke-width="1"/><rect x="241.0" y="16.6" width="10" height="10" fill="#c2560e" transform="rotate(45 246.0 21.6)" stroke="#ffffff" stroke-width="1"/></svg></td></tr>
+<tr><td><b>Classical Greece</b><div class="k">era vs era</div></td>
+<td class="a">c. 480–323 BCE</td><td class="p">11th–16th c. CE</td><td class="mv">no single offset</td>
+<td class="sv"><svg width="0" height="0" style="position:absolute"><defs><pattern id="h1f5fbf" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#1f5fbf"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern><pattern id="hc2560e" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#c2560e"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern></defs></svg><svg viewBox="0 0 300 30" width="100%" style="display:block"><line x1="12.4" x2="12.4" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="68.2" x2="68.2" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="124.1" x2="124.1" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="235.7" x2="235.7" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="291.5" x2="291.5" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="179.9" x2="179.9" y1="2" y2="28" stroke="#6b6862" stroke-width="1" stroke-dasharray="2 2"/><line x1="293.0" x2="293.0" y1="0" y2="30" stroke="#e5343b" stroke-width="2"/><path d="M157.5,15.6 C157.5,15.6 252.5,15.6 252.5,14.6" fill="none" stroke="#6b6862" stroke-width="1.2" stroke-dasharray="3 2"/><rect x="153.1" y="3.6" width="8.8" height="12" fill="#1f5fbf" fill-opacity=".22" stroke="#1f5fbf" stroke-dasharray="4 2"/><rect x="235.7" y="15.6" width="33.4" height="12" fill="#c2560e" fill-opacity=".22" stroke="#c2560e" stroke-dasharray="4 2"/></svg></td></tr>
+<tr><td><b>Parthenon</b><div class="k">build vs build</div></td>
+<td class="a">447–432 BCE</td><td class="p">late 14th c. CE</td><td class="mv">≈ +1,800</td>
+<td class="sv"><svg width="0" height="0" style="position:absolute"><defs><pattern id="h1f5fbf" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#1f5fbf"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern><pattern id="hc2560e" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#c2560e"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern></defs></svg><svg viewBox="0 0 300 30" width="100%" style="display:block"><line x1="12.4" x2="12.4" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="68.2" x2="68.2" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="124.1" x2="124.1" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="235.7" x2="235.7" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="291.5" x2="291.5" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="179.9" x2="179.9" y1="2" y2="28" stroke="#6b6862" stroke-width="1" stroke-dasharray="2 2"/><line x1="293.0" x2="293.0" y1="0" y2="30" stroke="#e5343b" stroke-width="2"/><path d="M155.4,15.6 C155.4,15.6 256.7,15.6 256.7,14.6" fill="none" stroke="#6b6862" stroke-width="1.2" stroke-dasharray="3 2"/><rect x="154.9" y="4.6" width="4.0" height="10" fill="url(#h1f5fbf)" stroke="#1f5fbf" stroke-width="1.2"/><rect x="255.3" y="16.6" width="4.0" height="10" fill="url(#hc2560e)" stroke="#c2560e" stroke-width="1.2"/></svg></td></tr>
+<tr><td><b>Peloponnesian War</b><div class="k">war vs war</div></td>
+<td class="a">431–404 BCE</td><td class="p">1374–1387 CE</td><td class="mv">+1,790 to +1,804</td>
+<td class="sv"><svg width="0" height="0" style="position:absolute"><defs><pattern id="h1f5fbf" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#1f5fbf"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern><pattern id="hc2560e" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#c2560e"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern></defs></svg><svg viewBox="0 0 300 30" width="100%" style="display:block"><line x1="12.4" x2="12.4" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="68.2" x2="68.2" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="124.1" x2="124.1" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="235.7" x2="235.7" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="291.5" x2="291.5" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="179.9" x2="179.9" y1="2" y2="28" stroke="#6b6862" stroke-width="1" stroke-dasharray="2 2"/><line x1="293.0" x2="293.0" y1="0" y2="30" stroke="#e5343b" stroke-width="2"/><path d="M156.6,15.6 C156.6,15.6 256.9,15.6 256.9,14.6" fill="none" stroke="#6b6862" stroke-width="1.2" stroke-dasharray="3 2"/><rect x="155.8" y="4.6" width="4.0" height="10" fill="#1f5fbf"/><rect x="256.6" y="16.6" width="4.0" height="10" fill="#c2560e"/></svg></td></tr>
+<tr><td><b>Rome: Sulla → Caracalla</b><div class="k">dynasty vs prototype</div></td>
+<td class="a">82 BCE – 217 CE</td><td class="p">962/965–1254 CE</td><td class="mv">+1,037 to +1,046</td>
+<td class="sv"><svg width="0" height="0" style="position:absolute"><defs><pattern id="h1f5fbf" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#1f5fbf"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern><pattern id="hc2560e" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#c2560e"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern></defs></svg><svg viewBox="0 0 300 30" width="100%" style="display:block"><line x1="12.4" x2="12.4" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="68.2" x2="68.2" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="124.1" x2="124.1" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="235.7" x2="235.7" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="291.5" x2="291.5" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="179.9" x2="179.9" y1="2" y2="28" stroke="#6b6862" stroke-width="1" stroke-dasharray="2 2"/><line x1="293.0" x2="293.0" y1="0" y2="30" stroke="#e5343b" stroke-width="2"/><path d="M183.6,15.6 C183.6,15.6 241.7,15.6 241.7,14.6" fill="none" stroke="#6b6862" stroke-width="1.2" stroke-dasharray="3 2"/><rect x="175.3" y="4.6" width="16.6" height="10" fill="#1f5fbf"/><rect x="233.6" y="16.6" width="16.3" height="10" fill="#c2560e"/></svg></td></tr>
+<tr><td><b>Crucifixion</b><div class="k">event vs revised proposal</div></td>
+<td class="a">30 or 33 CE</td><td class="p">1185 CE (birth 1152)</td><td class="mv">+1,152 to +1,155</td>
+<td class="sv"><svg width="0" height="0" style="position:absolute"><defs><pattern id="h1f5fbf" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#1f5fbf"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern><pattern id="hc2560e" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#c2560e"/><line x1="0" y1="0" x2="0" y2="5" stroke="#ffffff" stroke-width="2"/></pattern></defs></svg><svg viewBox="0 0 300 30" width="100%" style="display:block"><line x1="12.4" x2="12.4" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="68.2" x2="68.2" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="124.1" x2="124.1" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="235.7" x2="235.7" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="291.5" x2="291.5" y1="2" y2="28" stroke="#d9d6cf" stroke-width="1"/><line x1="179.9" x2="179.9" y1="2" y2="28" stroke="#6b6862" stroke-width="1" stroke-dasharray="2 2"/><line x1="293.0" x2="293.0" y1="0" y2="30" stroke="#e5343b" stroke-width="2"/><path d="M181.6,15.6 C181.6,15.6 245.1,15.6 245.1,14.6" fill="none" stroke="#6b6862" stroke-width="1.2" stroke-dasharray="3 2"/><circle cx="181.5" cy="9.6" r="5" fill="#1f5fbf" stroke="#ffffff" stroke-width="1"/><circle cx="181.7" cy="9.6" r="5" fill="#1f5fbf" stroke="#ffffff" stroke-width="1"/><circle cx="244.2" cy="21.6" r="4.3" fill="#ffffff" stroke="#c2560e" stroke-width="2"/><circle cx="246.0" cy="21.6" r="5" fill="#c2560e" stroke="#ffffff" stroke-width="1"/></svg></td></tr></tbody></table>
+<div class="leg"><span><i style="background:#1f5fbf"></i>accepted</span><span><i style="background:#c2560e"></i>proposed</span>
+<span>▭ dashed = era · ▬ bar = reign/war · ▨ hatched = construction · ◆ = date read from art · ● = one-year event</span></div>
+
+<h2>2. What kind of date it is</h2>
+<p>The two columns don’t always measure the same thing, and the chart keeps them apart.</p>
+<ul>
+<li><b>A zodiac reading is a date, not a reign.</b> Seti I’s 969 and 1206 CE are two answers to one horoscope. Neither is a period he ruled.</li>
+<li><b>A reign isn’t a build date.</b> Khufu’s reign is set against their era for <i>large pyramids</i>, 14th–16th c. Chron4 ch.20 also says “X–XI century the earliest,” with some “as late as the XVII.”</li>
+<li><b>An era isn’t a shift.</b> Egypt, c. 3100–30 BCE, is about 3,070 years long. They fit it inside about 600, so there is no single offset.</li>
+<li><b>The crucifixion date moved twice.</b> Chron4 ch.20 says 1095. Their later revision (Tsar of the Slavs, 2004) says birth 1152 and crucifixion 1185. This sheet uses the revision and flags the older one.</li>
+</ul>
+
+<h2>3. How the shifts work</h2>
+<p>There are three offset families. Each one is a <strong>different distance from the same origin</strong>. You don’t add them. Chron1 ch.6 §7 says it plainly: “All the three shifts are counted off the same point.”</p>
+<div class="fan"><svg viewBox="0 0 640 270" width="100%" style="display:block"><line x1="470" x2="470" y1="38" y2="232" stroke="#c2560e" stroke-width="3"/><text x="480" y="26" fill="#c2560e" font-family="Mono" font-size="12" font-weight="700">SAME ORIGIN</text><text x="480" y="42" fill="#6b6862" font-family="Mono" font-size="10">medieval original</text><line x1="470" x2="404.6" y1="70.0" y2="70.0" stroke="#c2560e" stroke-width="2.4"/><path d="M397.6,70.0 l10,-6 l0,12 z" fill="#c2560e"/><rect x="390.6" y="62.0" width="6.0" height="16" fill="#c2560e"/><text x="378.6" y="68.0" fill="#1c1b19" font-family="Mono" font-size="13" font-weight="700" text-anchor="end">I · −333 / 360 yrs</text><text x="378.6" y="86.0" fill="#6b6862" font-family="Mono" font-size="11" text-anchor="end">Roman–Byzantine shift</text><line x1="470" x2="245.8" y1="128.0" y2="128.0" stroke="#c2560e" stroke-width="2.4"/><path d="M238.8,128.0 l10,-6 l0,12 z" fill="#c2560e"/><rect x="237.8" y="120.0" width="6.0" height="16" fill="#c2560e"/><text x="259.8" y="119.0" fill="#1c1b19" font-family="Mono" font-size="13" font-weight="700" text-anchor="start">II · −1,053 yrs</text><text x="259.8" y="147.0" fill="#6b6862" font-family="Mono" font-size="11" text-anchor="start">Roman shift</text><line x1="470" x2="85.9" y1="186.0" y2="186.0" stroke="#c2560e" stroke-width="2.4"/><path d="M78.9,186.0 l10,-6 l0,12 z" fill="#c2560e"/><rect x="70.9" y="178.0" width="7.1" height="16" fill="#c2560e"/><text x="99.9" y="177.0" fill="#1c1b19" font-family="Mono" font-size="13" font-weight="700" text-anchor="start">III · −1,778–1,810 yrs</text><text x="99.9" y="205.0" fill="#6b6862" font-family="Mono" font-size="11" text-anchor="start">Graeco-Biblical shift</text><line x1="40" x2="470" y1="240" y2="240" stroke="#6b6862" stroke-width="1"/><line x1="470.0" x2="470.0" y1="240" y2="245" stroke="#6b6862"/><text x="470.0" y="258" fill="#6b6862" font-family="Mono" font-size="10" text-anchor="middle">0</text><line x1="359.7" x2="359.7" y1="240" y2="245" stroke="#6b6862"/><text x="359.7" y="258" fill="#6b6862" font-family="Mono" font-size="10" text-anchor="middle">−500</text><line x1="249.5" x2="249.5" y1="240" y2="245" stroke="#6b6862"/><text x="249.5" y="258" fill="#6b6862" font-family="Mono" font-size="10" text-anchor="middle">−1,000</text><line x1="139.2" x2="139.2" y1="240" y2="245" stroke="#6b6862"/><text x="139.2" y="258" fill="#6b6862" font-family="Mono" font-size="10" text-anchor="middle">−1,500</text></svg></div>
+<div class="two">
+<p><b>Right:</b> copy = original − 333/360, <i>or</i> − 1,053, <i>or</i> − 1,778…1,810. Chron2 ch.3 names them the Roman–Byzantine, Roman and Graeco-Biblical shifts.</p>
+<p><b>Wrong:</b> 333 + 1,053 + 1,778 = 3,164. Nobody proposes that number. There is also <b>no universal 600-year correction</b> anywhere in the sources.</p>
+</div>
+<p class="src">Gaps measured between two copies, not from the origin, can equal a difference or a sum. Fig. 6.20 labels Example 6 “720 = 1053 – 333.” Table 2 calls Example 2’s ≈1,300 “the sum of two basic shifts.”</p>
+
+<h2>4. The 20 duplicate dynasties, as printed</h2>
+<p>These are Chron1 ch.6, Examples 1–20. Shifts are copied from the text, tables, captions and figure notes. 8 examples print numbers that disagree with each other. 4 print no fixed offset at all.</p>
+<table class="t"><thead><tr><th>#</th><th>Dynasty a</th><th>Dynasty b</th><th>Shift as printed</th><th></th></tr></thead>
+<tbody><tr><td class='num'>1</td><td>Second Roman Empire 82 BC–217 AD</td><td>Third Roman Empire 270–526</td><td class='sh'>≈333 · caption ≈330–360</td><td><span class="tag split">DISAGREES</span></td></tr><tr><td class='num'>2</td><td>Israel kings 922–724 BC</td><td>Third Roman Empire 300–476</td><td class='sh'>≈1,300 (“sum of ≈1000 and 300”)</td><td></td></tr><tr><td class='num'>3</td><td>Judah kings 928–587 BC</td><td>Eastern Roman Empire 300–552</td><td class='sh'>none printed</td><td><span class="tag none">NO OFFSET</span></td></tr><tr><td class='num'>4</td><td>Popes 140–314</td><td>Popes 324–532</td><td class='sh'>none printed</td><td><span class="tag none">NO OFFSET</span></td></tr><tr><td class='num'>5</td><td>Carolingians 681–887 (captions: 888)</td><td>Eastern Roman Empire 324–527</td><td class='sh'>≈360 · mean 359.6</td><td><span class="tag split">DISAGREES</span></td></tr><tr><td class='num'>6</td><td>Holy Roman Empire 983–1266</td><td>Roman Empire 270–553</td><td class='sh'>≈720 = 1053 − 333 · mean 723</td><td></td></tr><tr><td class='num'>7</td><td>Holy Roman Empire 911–1254</td><td>Habsburgs 1273–1637</td><td class='sh'>≈362 · ≈360 · mean 373</td><td><span class="tag split">DISAGREES</span></td></tr><tr><td class='num'>8</td><td>Holy Roman Empire 936–1273</td><td>Second Roman Empire 82 BC–217 AD</td><td class='sh'>≈1,053 · mean 1,039</td><td></td></tr><tr><td class='num'>9</td><td>Judah kings 928–587 BC</td><td>Holy Roman Empire 911–1307</td><td class='sh'>≈1,830 · 1,839 (math: 1,838)</td><td><span class="tag split">DISAGREES</span></td></tr><tr><td class='num'>10</td><td>Israel kings 922–724 BC</td><td>Roman coronations 920–1170</td><td class='sh'>≈1,840 · “920 + 922 = 1842”</td><td><span class="tag split">DISAGREES</span></td></tr><tr><td class='num'>11</td><td>Russian czar-khans 1276–1600</td><td>Habsburgs 1273–1600</td><td class='sh'>0 — “no shift”</td><td></td></tr><tr><td class='num'>12</td><td>Armenian Catholicoses (from 970)</td><td>Holy Roman Empire + Judah</td><td class='sh'>60 (math: 59) · 1,839</td><td><span class="tag split">DISAGREES</span></td></tr><tr><td class='num'>13</td><td>Byzantium I 527–829</td><td>Byzantium II 829–1204</td><td class='sh'>≈340</td><td></td></tr><tr><td class='num'>14</td><td>Byzantium II 867–1143</td><td>Byzantium III 1204–1453</td><td class='sh'>≈330 (Byz II range ≠ Ex. 13)</td><td><span class="tag split">DISAGREES</span></td></tr><tr><td class='num'>15</td><td>Russia 945–1174</td><td>Russia 1363–1598</td><td class='sh'>410</td><td></td></tr><tr><td class='num'>16</td><td>“Ancient” Greece 510–300 BC</td><td>Medieval Greece 1250–1460</td><td class='sh'>≈1,810</td><td></td></tr><tr><td class='num'>17</td><td>England 640–1330</td><td>Byzantium 380–1453</td><td class='sh'>text 210–270 · fig. ≈275 / ≈120</td><td><span class="tag split">DISAGREES</span></td></tr><tr><td class='num'>18</td><td>Greek kings · Lacedaemon</td><td>Byzantium · Mistras</td><td class='sh'>none printed (fig. typo “330-397”)</td><td><span class="tag none">NO OFFSET</span></td></tr><tr><td class='num'>19</td><td>Regal Rome of Livy</td><td>Third Roman Empire 300–552</td><td class='sh'>≈1,050</td><td></td></tr><tr><td class='num'>20</td><td>Regal Rome of Livy</td><td>Holy Roman Empire + Byzantium</td><td class='sh'>none printed</td><td><span class="tag none">NO OFFSET</span></td></tr></tbody></table>
+
+<h2>5. Where the pages disagree with themselves</h2>
+<ol>
+<li>Ex. 1: the text says ≈333 and the caption says ≈330–360.</li>
+<li>Ex. 7 has three numbers for one pair: ≈362 in the text, ≈360 in the captions, and a mean reign-end shift of 373.</li>
+<li>Ex. 9: “911 AD = 928 BC … 1839.” Counted without a year 0, that is 1,838. Fig. 6.26 says ≈1,830.</li>
+<li>Ex. 12: “970 AD = 911 AD … 60 year shift.” The difference is 59.</li>
+<li>Ex. 17: the text gives 210–270 forward. Fig. 6.47 prints ≈275.</li>
+<li>Parthenon: “447 b.c. … shift of 1810 years … 1363 a.d.” With no year 0, the arithmetic gives 1364.</li>
+<li>Ex. 5 ends in 887 in the text and 888 in the captions. Byzantium II is 829–1204 in Ex. 13 and 867–1143 in Ex. 14.</li>
+<li>Fig. 6.50 prints one Spartan reign as “330-397” BC.</li>
+<li>No offset is printed for Examples 3, 4, 18 and 20.</li>
+</ol>
+
+<h2>6. What this sheet is not</h2>
+<ul>
+<li>It is not a redated list of every pharaoh. Egypt is shown as one era.</li>
+<li>It applies no universal correction. None exists in the sources.</li>
+<li>It doesn’t endorse the claim. Historians, Egyptologists and astronomers reject the New Chronology. This sheet only reports it accurately.</li>
+</ul>
+
+<h2>Sources</h2>
+<div class="two src">
+<div><b>Proposed — Fomenko &amp; Nosovsky, <i>History: Fiction or Science?</i></b><br>
+Chron1 ch.6, pp. 256–325: Examples 1–20, Tables 1–11, Figs 6.11–6.57, §7.<br>
+Chron2 ch.3 §§14–15: the 1374–1387 war, the Parthenon, the shift families.<br>
+Chron3 ch.19: zodiac datings (Dendera 1185, Seti I 969/1206, Senenmut 1007).<br>
+Chron4 ch.20: Egypt after 900 AD, pyramids XIV–XVI c., crucifixion 1095.<br>
+<i>Tsar of the Slavs</i> (2004): birth 1152, crucifixion 1185.<br>
+chronologia.org/en</div>
+<div><b>Accepted</b><br>
+The Met: Egyptian chronology; Classical Greece ca. 480–323 B.C.; Senenmut ceiling (TT353).<br>
+Harvard Giza Project: Khufu, builder of the Great Pyramid.<br>
+Egyptian Ministry of Tourism &amp; Antiquities: Tomb of Sety I (KV17).<br>
+Louvre D 38: Dendera zodiac (Cauville &amp; Aubourg, mid-50 BC sky).<br>
+Columbia Art Humanities: Parthenon 447–432 BC.<br>
+Britannica / Cambridge: Peloponnesian War 431–404 BC; Sulla 82 BC; Caracalla d. 217.<br>
+B. Ehrman (UNC): crucifixion 30 or 33 CE.</div>
+</div>
+
+<p class="stamp">Riven · pass over Chron1 ch.6, Chron2 ch.3, Chron3 ch.19, Chron4 ch.20 · every figure checked against the printed page · page wins over summary</p>
+<div class="pb"></div>
+<h2>Appendix — the full timeline</h2>
+<img class="poster" src="../poster_part1_rot.png" style="height:8.3in;width:auto;margin:8px auto 0">
+<p class="src">Rotated to fit the page. The full poster, including the 20-example panel, is in fomenko_new_chronology_timeline.pdf.</p>
+
+</body></html>
